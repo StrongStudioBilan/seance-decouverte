@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Séance Découverte Gratuite — StrongStudio Kourou</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',Arial,sans-serif;background:#050d18;color:#e8edf2;font-size:16px;line-height:1.7;padding-bottom:72px}
+:root{--gold:#E8C547;--teal:#4ECDC4;--orange:#F4845F;--green:#56CF8A;--purple:#A78BFA;--dark:#050d18;--dark2:#0D1B2A;--dark3:#112236;--muted:#7a94a8;--white:#e8edf2}
+h1,h2,h3{font-family:'Bebas Neue','Impact',sans-serif;letter-spacing:1px;line-height:1.05}
+p{color:#b8ccd8}
+strong{color:var(--white)}
+a{text-decoration:none;color:inherit}
+
+.container{max-width:820px;margin:0 auto;padding:0 28px}
+.section{padding:72px 0;position:relative;z-index:1}
+.section-alt{background:#0D1B2A;position:relative;z-index:1}
+.section-dark{background:#0a1218;position:relative;z-index:1}
+hr.div{border:none;border-top:1px solid rgba(255,255,255,0.06)}
+
+body::before{content:'';position:fixed;top:0;left:0;right:0;bottom:0;
+  background-image:linear-gradient(rgba(78,205,196,0.025) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(78,205,196,0.025) 1px,transparent 1px);
+  background-size:70px 70px;pointer-events:none;z-index:0}
+
+/* STICKY */
+.sticky{display:none;position:fixed;bottom:0;left:0;right:0;
+  background:rgba(5,13,24,0.96);backdrop-filter:blur(12px);
+  border-top:1px solid rgba(232,197,71,0.2);
+  padding:12px 20px;z-index:200;align-items:center;gap:12px}
+@media(max-width:640px){.sticky{display:flex}}
+.sticky-txt{font-size:13px;color:var(--muted);flex:1}
+.sticky-txt strong{color:var(--white);display:block;font-size:14px}
+
+/* BUTTONS */
+.btn{display:inline-flex;align-items:center;gap:10px;
+  background:var(--gold);color:#050d18;font-family:'DM Sans',Arial,sans-serif;
+  font-weight:700;font-size:16px;padding:16px 36px;border-radius:6px;
+  cursor:pointer;border:none;transition:all .2s;letter-spacing:.3px;text-decoration:none}
+.btn:hover{background:#f5d254;transform:translateY(-2px);box-shadow:0 8px 32px rgba(232,197,71,0.25)}
+.btn-sm{padding:12px 22px;font-size:14px}
+.btn-wrap{display:flex;flex-wrap:wrap;gap:14px;align-items:center}
+.btn-note{font-size:12px;color:var(--muted)}
+
+/* HERO */
+.hero{background:linear-gradient(160deg,#020810 0%,#050d18 40%,#0a1520 100%);
+  display:flex;flex-direction:column;justify-content:center;
+  padding:40px 0 36px;position:relative;overflow:hidden}
+.hero-glow-tl{position:absolute;top:-150px;left:-100px;width:600px;height:600px;
+  background:radial-gradient(circle,rgba(78,205,196,0.07) 0%,transparent 65%);pointer-events:none}
+.hero-glow-br{position:absolute;bottom:-100px;right:-80px;width:500px;height:500px;
+  background:radial-gradient(circle,rgba(232,197,71,0.06) 0%,transparent 65%);pointer-events:none}
+.hero-stripe{position:absolute;left:0;top:0;bottom:0;width:3px;
+  background:linear-gradient(to bottom,transparent,var(--gold) 30%,var(--gold) 70%,transparent);opacity:.5}
+.hero-img-block{position:absolute;right:0;top:0;bottom:0;width:42%;
+  clip-path:polygon(12% 0,100% 0,100% 100%,0% 100%);overflow:hidden;opacity:.18}
+.hero-img-block img{width:100%;height:100%;object-fit:cover;object-position:top center}
+@media(max-width:768px){.hero-img-block{display:none}}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:8px;
+  background:rgba(78,205,196,0.08);border:1px solid rgba(78,205,196,0.2);
+  color:var(--teal);font-size:11px;font-weight:700;letter-spacing:2.5px;
+  text-transform:uppercase;padding:6px 16px;border-radius:100px;margin-bottom:28px}
+.hero-eyebrow-dot{width:6px;height:6px;background:var(--teal);border-radius:50%;animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
+.hero h1{font-size:clamp(2.2rem,5vw,4rem);color:var(--white);margin-bottom:4px;line-height:.92}
+.hero h1 em{color:var(--gold);font-style:normal}
+.hero-rule{width:50px;height:3px;background:var(--gold);margin:8px 0;position:relative}
+.hero-rule::after{content:'';position:absolute;left:60px;top:50%;transform:translateY(-50%);
+  width:180px;height:1px;background:linear-gradient(to right,rgba(232,197,71,.35),transparent)}
+.hero-sub{font-size:.95rem;color:#8aa8be;max-width:540px;margin-bottom:10px;line-height:1.5}
+.urgency{display:inline-flex;align-items:center;gap:10px;
+  background:rgba(232,197,71,0.07);border:1px solid rgba(232,197,71,0.18);
+  border-radius:8px;padding:7px 14px;margin-bottom:12px;font-size:12px;color:var(--gold)}
+.urgency-dot{width:7px;height:7px;background:var(--gold);border-radius:50%;animation:pulse 1.5s infinite;flex-shrink:0}
+.gift-block{background:linear-gradient(135deg,rgba(78,205,196,0.07) 0%,rgba(167,139,250,0.04) 100%);
+  border:1px solid rgba(78,205,196,0.22);border-radius:12px;padding:22px 26px;margin-top:16px;
+  display:grid;grid-template-columns:auto 1fr;gap:18px;align-items:start}
+.gift-icon{font-size:32px;line-height:1}
+.gift-label{font-size:10px;font-weight:700;letter-spacing:2px;color:var(--teal);text-transform:uppercase;margin-bottom:5px}
+.gift-title{font-size:15px;font-weight:700;color:var(--white);margin-bottom:4px}
+.gift-items{display:flex;flex-wrap:wrap;gap:5px;margin:8px 0}
+.gift-pill{font-size:11px;background:rgba(78,205,196,0.09);border:1px solid rgba(78,205,196,0.15);color:var(--teal);padding:2px 9px;border-radius:100px}
+.gift-pill.gp-gold{background:rgba(232,197,71,0.09);border-color:rgba(232,197,71,0.2);color:var(--gold)}
+.gift-value{font-size:12px;color:var(--muted);margin-top:4px}
+.gift-value strong{color:var(--teal)}
+
+/* SECTION LABELS */
+.slabel{font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;margin-bottom:10px}
+.slabel-gold{color:var(--gold)}.slabel-teal{color:var(--teal)}.slabel-muted{color:var(--muted)}
+
+/* TARGET */
+.target-list{display:flex;flex-direction:column;gap:10px}
+.target-item{display:grid;grid-template-columns:28px 1fr;gap:14px;padding:14px 18px;
+  background:rgba(255,255,255,0.025);border:1px solid rgba(255,255,255,0.06);
+  border-left:2px solid rgba(232,197,71,0.3);border-radius:0 8px 8px 0}
+.target-arrow{color:var(--gold);font-size:15px;margin-top:2px}
+.target-main{font-size:15px;color:var(--white);font-weight:500;margin-bottom:3px}
+.target-result{font-size:12px;color:var(--teal)}
+
+/* STORY */
+.story-wrap{position:relative;padding-left:32px}
+.story-wrap::before{content:'';position:absolute;left:9px;top:8px;bottom:8px;width:2px;
+  background:linear-gradient(to bottom,var(--teal),var(--gold),var(--orange));opacity:.3}
+.story-item{position:relative;padding:0 0 28px 24px}
+.story-item:last-child{padding-bottom:0}
+.story-dot{position:absolute;left:-23px;top:3px;width:20px;height:20px;border-radius:50%;
+  background:var(--dark2);border:2px solid rgba(232,197,71,.4);
+  display:flex;align-items:center;justify-content:center;
+  font-family:'Bebas Neue','Impact',sans-serif;font-size:8px;color:var(--gold);z-index:1}
+.story-year{font-size:11px;font-weight:700;letter-spacing:1.5px;color:var(--gold);text-transform:uppercase;margin-bottom:4px}
+.story-title{font-size:15px;font-weight:700;color:var(--white);margin-bottom:5px}
+.story-text{font-size:14px;color:#8aa8be;line-height:1.65}
+.story-conclusion{background:rgba(232,197,71,0.06);border-left:3px solid var(--gold);
+  border-radius:0 8px 8px 0;padding:20px 24px;margin-top:8px;font-size:14px;color:#b8ccd8;line-height:1.7}
+.coach-card{display:flex;gap:20px;align-items:flex-start;
+  background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);
+  border-radius:12px;padding:24px;flex-wrap:wrap;margin-top:28px}
+.coach-av{width:64px;height:64px;border-radius:50%;overflow:hidden;flex-shrink:0;border:2px solid rgba(232,197,71,.3)}
+.coach-av img{width:100%;height:100%;object-fit:cover}
+.coach-name{font-weight:700;font-size:16px;color:var(--white)}
+.coach-role{font-size:13px;color:var(--muted);margin-bottom:8px}
+.creds{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:8px}
+.cred{font-size:11px;background:rgba(78,205,196,0.08);border:1px solid rgba(78,205,196,0.15);color:var(--teal);padding:2px 8px;border-radius:4px}
+.coach-quote{font-size:14px;color:#8aa8be;font-style:italic}
+
+/* VIDEO */
+.vid-wrap{border-radius:12px;overflow:hidden;background:#000;margin:14px 0}
+.vid-wrap video{width:100%;display:block;object-fit:contain}
+.vid-portrait{max-width:380px;margin-left:auto;margin-right:auto}
+.vid-portrait video{max-height:660px}
+.vid-landscape video{max-height:420px}
+
+/* TESTIMONIALS */
+.testi{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);border-radius:12px;padding:22px;margin-bottom:14px}
+.testi-header{display:flex;align-items:center;gap:14px;margin-bottom:12px}
+.testi-init{width:44px;height:44px;background:rgba(232,197,71,0.1);border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  font-family:'Bebas Neue','Impact',sans-serif;font-size:17px;color:var(--gold);flex-shrink:0}
+.testi-name{font-weight:700;font-size:15px;color:var(--white)}
+.testi-role{font-size:12px;color:var(--muted)}
+.testi-text{font-size:14px;color:#8aa8be;font-style:italic;line-height:1.7}
+.testi-result{font-size:12px;color:var(--teal);font-weight:700;margin-top:8px}
+.results-note{background:rgba(86,207,138,0.06);border:1px solid rgba(86,207,138,0.2);
+  border-radius:8px;padding:12px 18px;font-size:13px;color:#8aa8be;text-align:center;margin-bottom:20px}
+.results-note strong{color:var(--green)}
+.gallery-2{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:14px 0}
+.gallery-3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin:14px 0}
+@media(max-width:540px){.gallery-2{grid-template-columns:1fr}.gallery-3{grid-template-columns:1fr 1fr}}
+.gimg{width:100%;border-radius:8px;object-fit:cover;display:block}
+.after-feel{background:rgba(232,197,71,0.04);border:1px solid rgba(232,197,71,0.12);border-radius:12px;padding:26px;margin:28px 0}
+.after-feel-ttl{font-size:11px;font-weight:700;letter-spacing:2px;color:var(--muted);text-transform:uppercase;margin-bottom:14px}
+.afl{display:flex;align-items:flex-start;gap:12px;font-size:15px;color:#b8ccd8;margin-bottom:10px}
+.afl::before{content:'✓';color:var(--gold);font-weight:700;font-size:14px;flex-shrink:0;margin-top:2px}
+
+/* PROCESS */
+.process-step{display:flex;gap:20px;padding:22px 0;border-bottom:1px solid rgba(255,255,255,0.05)}
+.process-step:last-child{border-bottom:none}
+.process-num{flex-shrink:0;width:40px;height:40px;background:rgba(232,197,71,0.09);
+  border:1px solid rgba(232,197,71,0.22);border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  font-family:'Bebas Neue','Impact',sans-serif;font-size:18px;color:var(--gold)}
+.process-title{font-size:15px;font-weight:700;color:var(--white);margin-bottom:4px}
+.process-desc{font-size:14px;color:#8aa8be}
+.bilan-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:18px}
+@media(max-width:500px){.bilan-grid{grid-template-columns:1fr}}
+.bilan-item{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);border-radius:10px;padding:16px}
+.bilan-ico{font-size:20px;margin-bottom:7px}
+.bilan-lbl{font-size:13px;font-weight:700;color:var(--white);margin-bottom:4px}
+.bilan-dsc{font-size:12px;color:var(--muted)}
+
+/* CADEAUX */
+.cadeau-section{background:linear-gradient(135deg,#060f1c 0%,#0a1a2e 100%);
+  border-top:1px solid rgba(78,205,196,0.12);border-bottom:1px solid rgba(78,205,196,0.12);position:relative;z-index:1}
+.cadeau-wrap{border:1px solid rgba(78,205,196,0.2);border-radius:16px;overflow:hidden;margin-bottom:20px}
+.cadeau-header{background:linear-gradient(90deg,rgba(78,205,196,0.12),rgba(167,139,250,0.06));
+  padding:16px 24px;display:flex;align-items:center;gap:14px;border-bottom:1px solid rgba(78,205,196,0.12)}
+.cadeau-header-icon{font-size:28px}
+.cadeau-header-label{font-size:10px;font-weight:700;letter-spacing:2px;color:var(--teal);text-transform:uppercase}
+.cadeau-header-title{font-size:16px;font-weight:700;color:var(--white)}
+.cadeau-header-val{margin-left:auto;font-size:12px;color:var(--teal);white-space:nowrap}
+.cadeau-body{padding:20px 24px}
+.cadeau-desc{font-size:14px;color:#8aa8be;margin-bottom:16px;line-height:1.65}
+.cadeau-modules{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px}
+.cmod{font-size:11px;background:rgba(232,197,71,0.08);border:1px solid rgba(232,197,71,0.18);color:var(--gold);padding:3px 10px;border-radius:100px;font-weight:600}
+.fond-modules{display:flex;flex-direction:column;gap:12px;margin-top:12px}
+.fond-mod{background:rgba(255,255,255,0.02);border-left:2px solid;border-radius:0 8px 8px 0;padding:14px 18px}
+.fond-mod.m01{border-color:var(--teal)}.fond-mod.m02{border-color:var(--gold)}.fond-mod.m03{border-color:var(--orange)}
+.fond-mod-badge{font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:5px}
+.fond-mod.m01 .fond-mod-badge{color:var(--teal)}.fond-mod.m02 .fond-mod-badge{color:var(--gold)}.fond-mod.m03 .fond-mod-badge{color:var(--orange)}
+.fond-mod-title{font-size:14px;font-weight:700;color:var(--white);margin-bottom:4px}
+.fond-mod-text{font-size:13px;color:#8aa8be;line-height:1.6}
+.fond-mod-key{font-size:12px;margin-top:6px}
+.fond-mod.m01 .fond-mod-key{color:var(--teal)}.fond-mod.m02 .fond-mod-key{color:var(--gold)}.fond-mod.m03 .fond-mod-key{color:var(--orange)}
+
+/* FAQ */
+.faq-item{border:1px solid rgba(255,255,255,0.07);border-radius:10px;overflow:hidden;margin-bottom:8px}
+.faq-q{padding:16px 20px;font-weight:700;font-size:15px;color:var(--white);
+  background:rgba(255,255,255,0.025);cursor:pointer;
+  display:flex;justify-content:space-between;align-items:center;gap:12px;
+  user-select:none}
+.faq-q::after{content:'+';color:var(--gold);font-size:20px;flex-shrink:0}
+.faq-a{padding:0 20px 16px;font-size:14px;color:#8aa8be;display:none}
+.faq-item.open .faq-a{display:block}
+.faq-item.open .faq-q::after{content:'−'}
+
+/* LOCATION */
+.loc-box{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);
+  border-radius:12px;padding:24px;display:flex;gap:18px;flex-wrap:wrap}
+.loc-name{font-weight:700;font-size:16px;color:var(--white);margin-bottom:4px}
+.loc-addr{font-size:14px;color:#8aa8be;margin-bottom:8px}
+.loc-contact a{color:var(--teal)}
+
+/* FINAL CTA */
+.final-cta{background:linear-gradient(160deg,#020810 0%,#050d18 50%,#0a1520 100%);
+  border-top:1px solid rgba(232,197,71,0.12);padding:80px 0;text-align:center;position:relative;overflow:hidden;z-index:1}
+.final-cta::before{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
+  width:600px;height:300px;background:radial-gradient(ellipse,rgba(232,197,71,0.06) 0%,transparent 70%);pointer-events:none}
+.final-cta h2{font-size:clamp(2.2rem,5vw,3.8rem);color:var(--white)}
+.final-cta h2 em{color:var(--gold);font-style:normal}
+
+/* MODAL */
+.modal-overlay{display:none;position:fixed;inset:0;z-index:1000;
+  background:rgba(2,8,16,0.88);backdrop-filter:blur(6px);
+  align-items:center;justify-content:center;padding:20px}
+.modal-overlay.open{display:flex}
+.modal-box{background:#0D1B2A;border:1px solid rgba(78,205,196,0.25);
+  border-radius:16px;padding:36px 32px;width:100%;max-width:460px;
+  position:relative;animation:modalIn .25s ease;max-height:90vh;overflow-y:auto}
+@keyframes modalIn{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+.modal-close{position:absolute;top:14px;right:18px;background:none;border:none;
+  color:var(--muted);font-size:22px;cursor:pointer;line-height:1;transition:color .15s}
+.modal-close:hover{color:var(--white)}
+.modal-title{font-family:'Bebas Neue','Impact',sans-serif;font-size:1.9rem;color:var(--white);margin-bottom:4px;letter-spacing:.5px}
+.modal-sub{font-size:13px;color:var(--muted);margin-bottom:20px;line-height:1.5}
+.modal-form{display:flex;flex-direction:column;gap:10px}
+.modal-input{width:100%;background:rgba(255,255,255,0.06);
+  border:1px solid rgba(255,255,255,0.12);border-radius:8px;
+  padding:13px 16px;font-family:'DM Sans',Arial,sans-serif;
+  font-size:15px;color:var(--white);outline:none;transition:border-color .2s}
+.modal-input::placeholder{color:var(--muted)}
+.modal-input:focus{border-color:var(--teal);background:rgba(78,205,196,0.05)}
+.modal-rgpd{font-size:11px;color:var(--muted);line-height:1.55}
+.modal-rgpd label{display:flex;align-items:flex-start;gap:8px;font-weight:normal;cursor:pointer}
+.modal-rgpd input[type="checkbox"]{flex-shrink:0;margin-top:2px;accent-color:var(--gold);width:14px;height:14px}
+.modal-submit{width:100%;display:flex;justify-content:center;
+  background:var(--gold);color:#050d18;font-family:'DM Sans',Arial,sans-serif;
+  font-weight:700;font-size:16px;padding:15px;border-radius:8px;
+  border:none;cursor:pointer;transition:background .2s,transform .15s;margin-top:4px}
+.modal-submit:hover{background:#f5d254;transform:translateY(-1px)}
+.modal-note{font-size:11px;color:var(--muted);text-align:center;margin-top:6px}
+
+.mt-8{margin-top:8px}.mt-16{margin-top:16px}.mt-24{margin-top:24px}.mt-32{margin-top:32px}
+.mb-8{margin-bottom:8px}.mb-16{margin-bottom:16px}.mb-24{margin-bottom:24px}
+.tc{text-align:center}
+</style>
+</head>
+<body>
+
+<!-- STICKY MOBILE -->
+<div class="sticky">
+  <div class="sticky-txt"><strong>Séance découverte</strong>Gratuite · Sans engagement</div>
+  <a href="#" onclick="openModal();return false;" class="btn btn-sm">Je réserve</a>
+</div>
+
+<!-- ══ HERO ══ -->
+<section class="hero">
+  <div class="hero-glow-tl"></div>
+  <div class="hero-glow-br"></div>
+  <div class="hero-stripe"></div>
+  <div class="hero-img-block">
+    <img src="https://da32ev14kd4yl.cloudfront.net/versioned/martini-pierre-antoine/videos/_PRO1846-Modifier.jpg" alt="StrongStudio"/>
+  </div>
+  <div class="container">
+    <div class="hero-eyebrow"><div class="hero-eyebrow-dot"></div>StrongStudio Kourou · Coach diplômé 15 ans</div>
+    <h1>Retrouvez de l'<em>énergie</em>,<br>perdez du poids &amp; bougez sans douleur.</h1>
+    <div class="hero-rule"></div>
+    <p class="hero-sub">Accompagnement sur mesure · Bilan complet · Plan d'action personnalisé — adapté à Kourou.</p>
+    <div class="urgency"><div class="urgency-dot"></div>4 séances découverte disponibles par semaine</div>
+    <div class="btn-wrap">
+      <a href="#" onclick="openModal();return false;" class="btn">→ Réserver ma séance découverte gratuite</a>
+      <span class="btn-note">Sans engagement · Gratuit</span>
+    </div>
+    <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:16px">
+      <div style="display:flex;align-items:center;gap:7px;font-size:13px;color:#8aa8be;background:rgba(86,207,138,0.07);border:1px solid rgba(86,207,138,0.18);border-radius:6px;padding:6px 12px"><span style="color:#56CF8A;font-weight:700">✓</span> Vraiment gratuit</div>
+      <div style="display:flex;align-items:center;gap:7px;font-size:13px;color:#8aa8be;background:rgba(86,207,138,0.07);border:1px solid rgba(86,207,138,0.18);border-radius:6px;padding:6px 12px"><span style="color:#56CF8A;font-weight:700">✓</span> Débutant bienvenu</div>
+      <div style="display:flex;align-items:center;gap:7px;font-size:13px;color:#8aa8be;background:rgba(86,207,138,0.07);border:1px solid rgba(86,207,138,0.18);border-radius:6px;padding:6px 12px"><span style="color:#56CF8A;font-weight:700">✓</span> Douleur ou blessure ? On adapte</div>
+    </div>
+    <div class="gift-block">
+      <div class="gift-icon">🎁</div>
+      <div>
+        <div class="gift-label">Offert avec votre séance découverte</div>
+        <div class="gift-title">Guide Débuter + Parcours Fondations — 3 premiers modules</div>
+        <div class="gift-items">
+          <span class="gift-pill gp-gold">Guide Débuter l'entraînement</span>
+          <span class="gift-pill">M01 · Sommeil</span>
+          <span class="gift-pill">M02 · Nutrition</span>
+          <span class="gift-pill">M03 · Stress</span>
+        </div>
+        <div class="gift-value">Valeur 47 € — <strong>Offert gratuitement</strong> avec votre séance découverte</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="div"/>
+
+<!-- ══ À QUI S'ADRESSE ══ -->
+<section class="section">
+  <div class="container">
+    <div class="slabel slabel-gold">Notre accompagnement</div>
+    <h2 style="font-size:clamp(2rem,5vw,3rem);margin-bottom:28px">Vous vous reconnaissez<br>dans l'une de ces situations ?</h2>
+    <div class="target-list">
+      <div class="target-item"><div class="target-arrow">➡</div><div><div class="target-main">Reprendre une <strong>activité physique</strong> en toute sécurité, sans risque de blessure</div><div class="target-result">Dès la 1ère séance : programme adapté à votre niveau réel</div></div></div>
+      <div class="target-item"><div class="target-arrow">➡</div><div><div class="target-main"><strong>Perdre du poids</strong> durablement, sans régime extrême ni privation</div><div class="target-result">Résultats clients : −5 à −10 kg sur 3 à 4 mois, alimentation normale</div></div></div>
+      <div class="target-item"><div class="target-arrow">➡</div><div><div class="target-main">Retrouver une <strong>posture solide</strong> et soulager les <strong>douleurs</strong> de dos, d'épaules ou de nuque</div><div class="target-result">Amélioration ressentie dès les 3 premières semaines</div></div></div>
+      <div class="target-item"><div class="target-arrow">➡</div><div><div class="target-main">Soulager le <strong>stress du quotidien</strong> et retrouver la clarté mentale</div><div class="target-result">Sommeil, énergie, humeur — changent avant même que le corps se transforme</div></div></div>
+      <div class="target-item"><div class="target-arrow">➡</div><div><div class="target-main">Réapprendre le <strong>plaisir de bouger</strong> dans un cadre calme et privé</div><div class="target-result">100 % dédié à votre progression — pas de compétition, pas de comparaison</div></div></div>
+      <div class="target-item"><div class="target-arrow">➡</div><div><div class="target-main">Renforcer la <strong>confiance en soi</strong> physiquement et mentalement</div><div class="target-result">Le corps et la tête avancent ensemble — jamais l'un sans l'autre</div></div></div>
+    </div>
+    <div style="margin:28px 0;border-radius:12px;overflow:hidden">
+      <img src="image00030.jpeg" alt="Coaching kettlebell StrongStudio" style="width:100%;display:block;max-height:400px;object-fit:cover;object-position:center 30%;border-radius:12px"/>
+    </div>
+    <p style="font-size:1.1rem;color:var(--white);font-weight:600">Vous n'avez pas besoin d'être en forme pour commencer.<br><span style="color:var(--muted);font-weight:400;font-size:1rem">Vous avez juste besoin de vouloir aller mieux.</span></p>
+  </div>
+</section>
+
+<hr class="div"/>
+
+<!-- ══ HISTOIRE ══ -->
+<section class="section section-alt">
+  <div class="container">
+    <div class="slabel slabel-gold">L'histoire vraie derrière la méthode</div>
+    <h2 style="font-size:clamp(1.9rem,4.5vw,2.8rem);margin-bottom:32px">Pourquoi je comprends<br>ce que vous traversez</h2>
+    <div class="story-wrap">
+      <div class="story-item"><div class="story-dot">2020</div><div class="story-year">2020 — 2021</div><div class="story-title">Le COVID — 4 ans de travail anéantis</div><div class="story-text">La fermeture de ma première activité de coaching en Guyane en juin 2021, suite aux restrictions COVID-19, a marqué le début d'une longue traversée du désert.</div></div>
+      <div class="story-item"><div class="story-dot">2022</div><div class="story-year">2022</div><div class="story-title">Les doutes</div><div class="story-text">Dix-huit mois à perdre mes repères, ma santé, et peu à peu la rigueur qui m'avait construit. J'ai pris du poids, <strong>perdu confiance</strong>, et je voyais mon corps et mon mental se détériorer.</div></div>
+      <div class="story-item"><div class="story-dot">2023</div><div class="story-year">2023</div><div class="story-title">Le deuil</div><div class="story-text">Mon père est parti après une longue maladie. Nous vivions ensemble depuis plus de trois ans. Ce moment a <strong>tout bouleversé.</strong> J'ai décidé de repartir à zéro.</div></div>
+      <div class="story-item"><div class="story-dot">2024</div><div class="story-year">2024</div><div class="story-title">La chute — puis le retour</div><div class="story-text">La veille de mon anniversaire, cambriolage, voiture volée. Plus d'argent, des dettes, 15 kilos en plus. Rien n'a été facile. Mais <strong>à force d'agir, un pas après l'autre</strong>, j'ai tenu.</div></div>
+      <div class="story-item"><div class="story-dot">2025</div><div class="story-year">2025</div><div class="story-title">La méthode</div><div class="story-text">J'ai réappris à me discipliner, à reprendre soin de ma santé. Pas de miracle. Pas de raccourci. <strong>Des efforts constants, réguliers et mesurables.</strong></div></div>
+    </div>
+    <div class="story-conclusion">Si vous traversez une période où vous sentez qu'il faut <strong>rebâtir</strong>, je peux vous aider à poser les mêmes <strong>fondations</strong>. Mon accompagnement n'est pas une promesse de transformation rapide. C'est un <strong>retour au réel : corps, santé, clarté.</strong></div>
+    <div style="margin-top:28px;max-width:480px">
+      <img src="https://da32ev14kd4yl.cloudfront.net/versioned/martini-pierre-antoine/videos/avant apres 2025.jpg" alt="Avant Après Pierre-Antoine" style="width:100%;display:block;object-fit:contain;background:#050d18;border-radius:12px 12px 0 0"/>
+      <div style="background:rgba(232,197,71,0.07);border:1px solid rgba(232,197,71,0.18);border-top:none;border-radius:0 0 12px 12px;padding:14px 18px;text-align:center">
+        <div style="font-family:'Bebas Neue','Impact',sans-serif;font-size:1.3rem;color:var(--gold);letter-spacing:1px;margin-bottom:5px">2023 → 2025</div>
+        <div style="font-size:13px;color:#8aa8be;line-height:1.55">Le même homme. Des choix différents. Reconstruire son corps après tout perdre — c'est possible, et ça commence par une seule décision.</div>
+      </div>
+    </div>
+    <div class="gallery-3" style="margin-top:24px">
+      <img class="gimg" style="height:220px" src="https://da32ev14kd4yl.cloudfront.net/versioned/martini-pierre-antoine/videos/_PRO1986-Modifier.jpg" alt="Pierre-Antoine Martini"/>
+      <img class="gimg" style="height:220px" src="https://da32ev14kd4yl.cloudfront.net/versioned/martini-pierre-antoine/videos/_PRO1711-Modifier.jpg" alt="Coaching StrongStudio"/>
+      <img class="gimg" style="height:220px" src="https://da32ev14kd4yl.cloudfront.net/versioned/martini-pierre-antoine/videos/_PRO1552-Modifier.jpg" alt="Kettlebell Kourou"/>
+    </div>
+    <div class="coach-card">
+      <div class="coach-av"><img src="https://da32ev14kd4yl.cloudfront.net/versioned/martini-pierre-antoine/videos/_PRO1986-Modifier.jpg" alt="Pierre-Antoine Martini"/></div>
+      <div>
+        <div class="coach-name">Pierre-Antoine Martini</div>
+        <div class="coach-role">Fondateur de StrongStudio Kourou</div>
+        <div class="creds"><span class="cred">BPJEPS</span><span class="cred">StrongFirst Instructeur Elite</span><span class="cred">Beast Tamer</span><span class="cred">15 ans d'expérience</span></div>
+        <div style="margin:10px 0"><img src="_MAR0016.jpg" alt="Certificat StrongFirst Elite Pierre Martini" style="width:100%;max-width:200px;border-radius:8px;display:block"/></div>
+        <div class="coach-quote">"Notre mission : vous aider à redevenir fort, physiquement et mentalement, avec des actions simples, cohérentes et durables."</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="div"/>
+
+<!-- ══ TÉMOIGNAGES ══ -->
+<section class="section">
+  <div class="container">
+    <div class="slabel slabel-teal">Preuves sociales</div>
+    <h2 style="font-size:clamp(1.9rem,4.5vw,2.8rem);margin-bottom:8px">Ce que disent nos clients</h2>
+    <p class="mb-24">Des transformations réelles, obtenues grâce à des actions simples, constantes, adaptées à chaque personne.</p>
+    <div class="results-note"><strong>Résultats moyens constatés</strong> : −5 à −10 kg · Douleurs réduites · Énergie retrouvée · Sommeil amélioré</div>
+    <div style="border-radius:12px;overflow:hidden;margin-bottom:20px">
+      <img src="555725458_3726347887666531_2407005641873497305_n.jpg" alt="Transformations clientes StrongStudio Kourou" style="width:100%;display:block;border-radius:12px 12px 0 0"/>
+      <div style="background:rgba(78,205,196,0.06);border:1px solid rgba(78,205,196,0.15);border-top:none;border-radius:0 0 10px 10px;padding:8px 16px;text-align:center;font-size:12px;color:#7a94a8">Transformations réelles de clientes StrongStudio · @strongstudio_kourou</div>
+    </div>
+    <div class="vid-wrap vid-portrait">
+      <video controls preload="metadata">
+        <source src="https://da32ev14kd4yl.cloudfront.net/versioned/martini-pierre-antoine/videos/copy_D0F106B5-26F3-4E43-B224-632C438ACDF2.mp4" type="video/mp4"/>
+      </video>
+    </div>
+    <div class="vid-wrap vid-portrait">
+      <video controls preload="metadata">
+        <source src="https://da32ev14kd4yl.cloudfront.net/versioned/martini-pierre-antoine/videos/InShot_20260205_142215405.mp4" type="video/mp4"/>
+      </video>
+    </div>
+    <div class="testi">
+      <div class="testi-header"><div class="testi-init">R</div><div><div class="testi-name">Rose</div><div class="testi-role">30 ans · Assistante Radiologie</div></div></div>
+      <div class="testi-text">"Une des premières phrases que tu m'as dite c'est 'si je te demande de gravir une montagne pour venir t'entraîner tu le feras pas'. Pour moi maintenant chaque effort compte… même les petits. Je tiens à te remercier pour le temps que tu as pris à corriger les mouvements et à me pousser au-delà de ce que je pensais pouvoir faire. Toute ma base de training avec les KB c'est à toi que je la dois. Je recommande vraiment aux personnes qui ont du mal à se lancer de te contacter afin d'être accompagné comme il se doit."</div>
+      <div class="testi-result">✓ Base kettlebell construite de zéro · Progression régulière et durable</div>
+    </div>
+    <div class="testi">
+      <div class="testi-header"><div class="testi-init">F</div><div><div class="testi-name">Fatia</div><div class="testi-role">24 ans · Préparatrice en Pharmacie</div></div></div>
+      <div class="testi-text">"3 mois intensifs de coaching privé et adapté… ça m'a énormément aidée, et pas que physiquement. J'ai −9 kg actuellement mais réaliser en 4 mois que je peux vraiment le faire m'a permis de me recentrer, sortir de ma zone de confort, être plus confiante. Strong first c'est se remettre en bonne santé physique et mentale et pour ça je te remercie."</div>
+      <div class="testi-result">✓ −9 kg en 4 mois · Confiance retrouvée · Santé physique ET mentale</div>
+    </div>
+    <div class="testi">
+      <div class="testi-header"><div class="testi-init">L</div><div><div class="testi-name">Laurent</div><div class="testi-role">55 ans · Pharmacien</div></div></div>
+      <div class="testi-text">"Quand j'ai commencé avec Pierre, le but était d'apprendre à faire des exercices à domicile pour avoir une régularité. Au bout de 2 ans j'avais un acquis dans la régularité. Je viens de faire 33 km de randonnée à Saül en 2 jours. Je souffre beaucoup moins qu'il y a 10 ans, quand je faisais 10 kg de plus et que j'étais sédentaire."</div>
+      <div class="testi-result">✓ 33 km de randonnée à Saül · −10 kg · Pratique autonome 2 ans après</div>
+    </div>
+    <div class="testi">
+      <div class="testi-header"><div class="testi-init" style="background:rgba(167,139,250,0.12);color:#A78BFA">L</div><div><div class="testi-name">Lu-Anna</div><div class="testi-role">50 ans · Responsable logistique CNES</div></div></div>
+      <div class="testi-text">"Concernant mon retour franchement il est positif, j'ai eu des résultats au bout de quelques mois et concernant le changement physique c'était vraiment visible pour ma part. Faire du sport régulièrement surtout les jours où je venais le matin m'a reboosté pour la journée, j'ai une hygiène de vie plus stable et moins dangereuse pour ma santé physique et après ça m'a permis d'avoir une activité à faire ou je pouvais me donner à fond."</div>
+      <div class="testi-result" style="color:#A78BFA">✓ Changement physique visible · Énergie retrouvée · Hygiène de vie transformée</div>
+    </div>
+    <p style="margin-top:32px;margin-bottom:16px;font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--muted)">Transformations clients</p>
+    <div class="gallery-2">
+      <img class="gimg" style="height:280px" src="https://da32ev14kd4yl.cloudfront.net/versioned/martini-pierre-antoine/images/InShot_20251205_193520043(1).jpg" alt="Transformation"/>
+      <img class="gimg" style="height:280px" src="https://da32ev14kd4yl.cloudfront.net/versioned/martini-pierre-antoine/images/InShot_20251204_170949258.jpg" alt="4 mois évolution"/>
+    </div>
+    <div class="after-feel">
+      <div class="after-feel-ttl">Une fois que vous avez commencé...</div>
+      <div class="afl">Vous vous réveillez avec plus d'énergie — avant même que le corps change visuellement</div>
+      <div class="afl">Vous arrêtez de vous dire "je m'y remets lundi"</div>
+      <div class="afl">Vous sentez votre corps répondre enfin à vos efforts</div>
+      <div class="afl">Vous n'avez plus peur de décrocher — parce que la structure tient</div>
+    </div>
+    <div class="btn-wrap" style="justify-content:center">
+      <a href="#" onclick="openModal();return false;" class="btn">→ Réserver ma séance découverte gratuite</a>
+    </div>
+  </div>
+</section>
+
+<hr class="div"/>
+
+<!-- ══ MÉTHODE ══ -->
+<section class="section section-alt">
+  <div class="container">
+    <div class="slabel slabel-gold">Notre méthode</div>
+    <h2 style="font-size:clamp(1.9rem,4.5vw,2.8rem);margin-bottom:8px">Un accompagnement sur mesure<br>en 4 étapes</h2>
+    <p class="mb-24">Pas un programme générique. Un plan construit pour votre corps, votre vie et votre emploi du temps réel.</p>
+    <div class="process-step"><div class="process-num">1</div><div><div class="process-title">🩺 Le bilan personnalisé complet</div><div class="process-desc">On fait le point sur votre corps, votre énergie, vos habitudes. Vous comprenez enfin pourquoi vous êtes fatigué, pourquoi vous avez mal, et ce qui bloque vos résultats.</div></div></div>
+    <div class="process-step"><div class="process-num">2</div><div><div class="process-title">📋 Le plan d'action</div><div class="process-desc">Vous repartez avec une stratégie claire : quoi faire, à quelle fréquence, et comment l'intégrer dans votre vie réelle à Kourou.</div></div></div>
+    <div class="process-step"><div class="process-num">3</div><div><div class="process-title">💪 L'action en séance</div><div class="process-desc">Séances privées ou en petit groupe, dans un cadre calme, avec corrections techniques et suivi des données.</div></div></div>
+    <div class="process-step"><div class="process-num">4</div><div><div class="process-title">📊 Les résultats mesurables</div><div class="process-desc">Posture, énergie, sommeil, poids, douleur. On suit vos progrès au lieu de deviner. Chaque chiffre a un sens.</div></div></div>
+    <div class="bilan-grid">
+      <div class="bilan-item"><div class="bilan-ico">😴</div><div class="bilan-lbl">Habitudes de vie</div><div class="bilan-dsc">Sommeil, nutrition, stress, rythme quotidien</div></div>
+      <div class="bilan-item"><div class="bilan-ico">🏃</div><div class="bilan-lbl">Condition physique</div><div class="bilan-dsc">Posture, mobilité, force, endurance</div></div>
+      <div class="bilan-item"><div class="bilan-ico">📐</div><div class="bilan-lbl">Mesures objectives</div><div class="bilan-dsc">Composition corporelle, poids, masse musculaire</div></div>
+      <div class="bilan-item"><div class="bilan-ico">🧬</div><div class="bilan-lbl">Bilan biologique</div><div class="bilan-dsc">Si nécessaire, avec professionnel partenaire</div></div>
+    </div>
+    <div class="vid-wrap vid-landscape" style="margin-top:24px">
+      <video controls preload="metadata" poster="https://da32ev14kd4yl.cloudfront.net/versioned/martini-pierre-antoine/videos/_PRO1686-Modifier.jpg">
+        <source src="https://da32ev14kd4yl.cloudfront.net/versioned/martini-pierre-antoine/videos/InShot_20251028_150800897.mp4" type="video/mp4"/>
+      </video>
+    </div>
+    <div class="gallery-3" style="margin-top:16px">
+      <img class="gimg" style="height:240px;object-fit:cover;object-position:center" src="image00086.jpeg" alt="Squat StrongStudio"/>
+      <img class="gimg" style="height:240px;object-fit:cover;object-position:center" src="image00008.jpeg" alt="Gainage fitness ball"/>
+      <img class="gimg" style="height:240px;object-fit:cover;object-position:top" src="image00011.jpeg" alt="Pompes parallèles"/>
+    </div>
+    <div class="gallery-3" style="margin-top:10px">
+      <img class="gimg" style="height:200px;object-fit:cover;object-position:top" src="https://da32ev14kd4yl.cloudfront.net/versioned/martini-pierre-antoine/videos/_PRO1894-Modifier.jpg" alt="Coaching Pierre-Antoine"/>
+      <img class="gimg" style="height:200px;object-fit:cover;object-position:top" src="https://da32ev14kd4yl.cloudfront.net/versioned/martini-pierre-antoine/videos/_PRO1711-Modifier.jpg" alt="Séance StrongStudio"/>
+      <img class="gimg" style="height:200px;object-fit:cover;object-position:top" src="https://da32ev14kd4yl.cloudfront.net/versioned/martini-pierre-antoine/videos/_PRO1552-Modifier.jpg" alt="Kettlebell Kourou"/>
+    </div>
+  </div>
+</section>
+
+<hr class="div"/>
+
+<!-- ══ CADEAUX ══ -->
+<section class="section cadeau-section">
+  <div class="container">
+    <div class="slabel slabel-teal tc">Inclus avec votre séance découverte</div>
+    <h2 class="tc" style="font-size:clamp(1.9rem,4.5vw,2.8rem);margin:8px 0 8px">Avant même votre première séance,<br>vous accédez à la méthode complète</h2>
+    <p class="tc mb-32" style="max-width:520px;margin-left:auto;margin-right:auto">Deux ressources offertes pour comprendre votre corps — pas seulement suivre des instructions.</p>
+    <div class="cadeau-wrap">
+      <div class="cadeau-header"><div class="cadeau-header-icon">📘</div><div><div class="cadeau-header-label">Cadeau 1</div><div class="cadeau-header-title">Guide Débuter l'Entraînement Musculaire</div></div><div class="cadeau-header-val">Valeur 19 €</div></div>
+      <div class="cadeau-body"><div class="cadeau-desc">Le guide pratique complet pour démarrer sans erreurs. Recomposition corporelle, mouvements polyarticulaires, surcharge progressive et deux séances complètes prêtes à l'emploi.</div><div class="cadeau-modules"><span class="cmod">Recomposition corporelle</span><span class="cmod">Mouvements polyarticulaires</span><span class="cmod">Surcharge progressive</span><span class="cmod">2 séances complètes</span></div></div>
+    </div>
+    <div class="cadeau-wrap">
+      <div class="cadeau-header"><div class="cadeau-header-icon">🧬</div><div><div class="cadeau-header-label">Cadeau 2</div><div class="cadeau-header-title">Parcours Fondations — 3 premiers modules</div></div><div class="cadeau-header-val">Valeur 28 €</div></div>
+      <div class="cadeau-body">
+        <div class="cadeau-desc">Les 3 fondations biologiques qui déterminent 80 % de vos résultats — avant même de soulever le premier poids.</div>
+        <div class="fond-modules">
+          <div class="fond-mod m01"><div class="fond-mod-badge">Module 01 · Sommeil</div><div class="fond-mod-title">Sommeil &amp; Performance</div><div class="fond-mod-text">Une semaine à 5-6h suffit à réduire de 55% la graisse perdue, augmenter la faim de 28% et faire chuter la testostérone. Le sommeil profond est le moment où vos muscles se reconstruisent vraiment.</div><div class="fond-mod-key">→ Coucher fixe 7j/7 · chambre fraîche · écrans off 30 min avant</div></div>
+          <div class="fond-mod m02"><div class="fond-mod-badge">Module 02 · Nutrition</div><div class="fond-mod-title">Nutrition &amp; Énergie</div><div class="fond-mod-text">Protéines (1.6-2.2g/kg), glucides de qualité (Couac, manioc, plantain), lipides jamais sous 25%. Un déficit de −300 à −500 kcal pour perdre la graisse sans perdre le muscle.</div><div class="fond-mod-key">→ Assiette protéines + légumes + glucides de qualité à chaque repas</div></div>
+          <div class="fond-mod m03"><div class="fond-mod-badge">Module 03 · Stress</div><div class="fond-mod-title">Stress &amp; Récupération</div><div class="fond-mod-text">Le cortisol chronique stocke la graisse viscérale, dégrade le muscle et bloque le sommeil profond. La récupération active accélère la réparation musculaire de 30-40%.</div><div class="fond-mod-key">→ 10 min de décompression active/jour · marche soir 18h-19h30</div></div>
+        </div>
+        <div style="background:rgba(78,205,196,0.06);border:1px solid rgba(78,205,196,0.15);border-radius:8px;padding:14px 18px;margin-top:16px;font-size:13px;color:#8aa8be"><strong style="color:var(--teal)">Le parcours complet (12 modules)</strong> est offert après la séance découverte.</div>
+      </div>
+    </div>
+    <div style="text-align:center;padding:24px;background:rgba(232,197,71,0.06);border:1px solid rgba(232,197,71,0.18);border-radius:12px;margin-top:8px">
+      <div style="font-size:12px;font-weight:700;letter-spacing:2px;color:var(--muted);text-transform:uppercase;margin-bottom:8px">Valeur totale des cadeaux</div>
+      <div style="font-family:'Bebas Neue','Impact',sans-serif;font-size:3.5rem;color:var(--gold);line-height:1">47 €</div>
+      <div style="font-size:14px;color:var(--white);margin-top:6px">Offerts gratuitement avec votre séance découverte</div>
+    </div>
+    <div class="btn-wrap" style="justify-content:center;margin-top:24px">
+      <a href="#" onclick="openModal();return false;" class="btn">→ Réserver et recevoir mes cadeaux</a>
+    </div>
+  </div>
+</section>
+
+<hr class="div"/>
+
+<!-- ══ FAQ ══ -->
+<section class="section section-alt">
+  <div class="container">
+    <div class="slabel slabel-gold">Questions fréquentes</div>
+    <h2 style="font-size:clamp(1.9rem,4.5vw,2.8rem);margin-bottom:24px">Tout ce que vous voulez<br>savoir avant de venir</h2>
+    <div class="faq-item open">
+      <div class="faq-q">La séance découverte est-elle vraiment gratuite ?</div>
+      <div class="faq-a">Oui, sans engagement et sans frais cachés. C'est un premier rendez-vous pour faire le point ensemble — diagnostic, plan d'action, recommandations. Vous repartez avec des actions concrètes quelle que soit votre décision ensuite.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Combien de temps dure la séance découverte ?</div>
+      <div class="faq-a">Entre 45 minutes et 1 heure. Bilan complet, plan personnalisé, et vous repartez avec des actions à mettre en place dès la semaine suivante.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Je n'ai pas fait de sport depuis longtemps — c'est pour moi ?</div>
+      <div class="faq-a">C'est exactement pour ça que la séance découverte existe. La majorité de nos clients n'avaient pas pratiqué depuis plusieurs années. On part de votre niveau réel, pas d'un niveau imaginaire.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">J'ai une douleur au dos ou une blessure ancienne — puis-je venir ?</div>
+      <div class="faq-a">Oui. Le bilan initial inclut une évaluation posturale et fonctionnelle. Tout est adapté à votre situation réelle. En cas de pathologie médicale, on travaille en coordination avec votre médecin.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Les séances sont-elles individuelles ou en groupe ?</div>
+      <div class="faq-a">Les deux sont possibles. Séances privées ou en petit groupe dans un cadre calme, 100 % dédié à votre progression. Aucune grande salle, aucun anonymat.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Où se trouve le studio ?</div>
+      <div class="faq-a">Place de l'Horloge à Kourou, à côté du vétérinaire et en face d'Actalis — 97310 Kourou. Parking disponible.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Combien coûtent les séances après la découverte ?</div>
+      <div class="faq-a">Les tarifs sont présentés lors de la séance découverte, adaptés à votre programme et à la fréquence recommandée. Pas de forfait générique — un plan construit pour vous.</div>
+    </div>
+  </div>
+</section>
+
+<hr class="div"/>
+
+<!-- ══ LOCALISATION ══ -->
+<section class="section">
+  <div class="container">
+    <div class="slabel slabel-muted" style="margin-bottom:16px">Nous trouver</div>
+    <div class="loc-box">
+      <div style="font-size:32px">📍</div>
+      <div>
+        <div class="loc-name">StrongStudio Kourou</div>
+        <div class="loc-addr">Place de l'Horloge · À côté du vétérinaire · En face d'Actalis<br>97310 Kourou, Guyane</div>
+        <div class="loc-contact">📞 <a href="tel:0694221799">0694 22 17 99</a> &nbsp;·&nbsp; ✉️ <a href="mailto:strongstudio-kourou@outlook.fr">strongstudio-kourou@outlook.fr</a></div>
+      </div>
+    </div>
+    <img class="gimg" style="margin-top:16px;height:260px;object-fit:cover" src="image00009.jpeg" alt="StrongStudio Kourou"/>
+  </div>
+</section>
+
+<!-- ══ FINAL CTA ══ -->
+<section class="final-cta">
+  <div class="container" style="position:relative;z-index:1">
+    <h2>Votre première séance<br>est <em>gratuite</em> et sans engagement.</h2>
+    <p style="color:var(--muted);max-width:460px;margin:16px auto 32px">Seulement 4 séances découverte sont disponibles par semaine.<br>Ne remettez pas à lundi ce que vous pouvez décider aujourd'hui.</p>
+    <a href="#" onclick="openModal();return false;" class="btn" style="font-size:17px;padding:18px 44px">→ Réserver ma séance découverte gratuite</a>
+    <p style="font-size:12px;color:var(--muted);margin-top:16px">Sans engagement · Bilan complet · Guide + Fondations offerts (valeur 47 €)</p>
+    <div class="urgency" style="justify-content:center;display:inline-flex;margin-top:24px">
+      <div class="urgency-dot"></div>
+      4 places / semaine · 0694 22 17 99 · @strongstudio_kourou
+    </div>
+  </div>
+</section>
+
+<!-- ══ MODAL ══ -->
+<div class="modal-overlay" id="reservModal">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal()">✕</button>
+    <div class="modal-title">Réservez votre séance</div>
+    <div class="modal-sub">Gratuite · Sans engagement · Réponse sous 24h</div>
+    <div id="modal-confirm" style="display:none;text-align:center;padding:20px 0">
+      <div style="font-size:48px;margin-bottom:16px">✅</div>
+      <div style="font-family:'Bebas Neue','Impact',sans-serif;font-size:1.8rem;color:#e8edf2;margin-bottom:8px">Demande envoyée !</div>
+      <div style="font-size:14px;color:#8aa8be;line-height:1.65;margin-bottom:20px">Pierre-Antoine vous recontacte sous 24h pour confirmer votre créneau.<br><strong style="color:#4ECDC4">Pensez à vérifier vos spams.</strong></div>
+      <div style="background:rgba(232,197,71,0.07);border:1px solid rgba(232,197,71,0.18);border-radius:10px;padding:14px 18px;font-size:13px;color:#b8ccd8;margin-bottom:16px">🎁 Votre Guide Débuter + 3 modules Fondations (valeur 47 €) vous sera envoyé par email dans les prochaines minutes.</div>
+      <button onclick="closeModal()" class="btn" style="width:100%;justify-content:center">Fermer</button>
+    </div>
+    <div id="modal-form-wrap">
+      <form method="post" action="https://martini-pierre-antoine.learnybox.com/form/68fe551408f04mz2ijkrjtotubb48n5mms/" target="_parent" class="modal-form" id="reservForm">
+        <input type="text" name="fname" placeholder="Votre prénom" required class="modal-input"/>
+        <input type="email" name="email" placeholder="Votre adresse email *" required class="modal-input"/>
+        <input type="text" name="mobile" placeholder="Votre numéro de téléphone" class="modal-input"/>
+        <div class="modal-rgpd">
+          <label>
+            <input type="checkbox" name="rgpd" value="1" required/>
+            <span>En indiquant votre email, vous acceptez d'être recontacté par notre coach pour réserver votre séance bilan privée.</span>
+          </label>
+          <input type="hidden" name="rgpd_notice" value="En indiquant votre adresse mail, vous acceptez de recevoir nos offres promotionnelles et d&#39;être recontacté par notre coach pour réserver une séance bilan privée."/>
+        </div>
+        <button type="submit" class="modal-submit">→ Je réserve ma séance découverte gratuite</button>
+        <div class="modal-note">Sans engagement · Gratuit · Réponse sous 24h</div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<script>
+// ── MODAL ──
+function openModal(){
+  document.getElementById('reservModal').classList.add('open');
+  document.body.style.overflow='hidden';
+  document.getElementById('modal-form-wrap').style.display='block';
+  document.getElementById('modal-confirm').style.display='none';
+}
+function closeModal(){
+  document.getElementById('reservModal').classList.remove('open');
+  document.body.style.overflow='';
+}
+document.getElementById('reservModal').addEventListener('click',function(e){
+  if(e.target===this)closeModal();
+});
+document.addEventListener('keydown',function(e){
+  if(e.key==='Escape')closeModal();
+});
+document.getElementById('reservForm').addEventListener('submit',function(e){
+  e.preventDefault();
+  var form=this;
+  var data=new FormData(form);
+  fetch(form.action,{method:'POST',body:data,mode:'no-cors'})
+    .then(function(){
+      document.getElementById('modal-form-wrap').style.display='none';
+      document.getElementById('modal-confirm').style.display='block';
+    })
+    .catch(function(){form.submit();});
+});
+
+// ── FAQ ──
+document.querySelectorAll('.faq-q').forEach(function(q){
+  q.addEventListener('click',function(){
+    var item=this.parentElement;
+    var wasOpen=item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(function(i){i.classList.remove('open');});
+    if(!wasOpen)item.classList.add('open');
+  });
+});
+</script>
+
+</body>
+</html>
