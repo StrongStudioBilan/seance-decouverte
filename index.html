@@ -1,583 +1,1236 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-<title>Séance Découverte Gratuite — StrongStudio Kourou</title>
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet"/>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bilan Offert — StrongStudio Kourou | Coaching privé, méthode structurée</title>
+<meta name="description" content="Coaching privé à Kourou + parcours structuré en 12 modules. Bilan complet offert (60 min) avec guide + 3 modules Fondations. Pour celles et ceux qui ont déjà essayé.">
+<meta property="og:title" content="Bilan Offert — StrongStudio Kourou">
+<meta property="og:description" content="Coaching privé + méthode structurée. Pour celles et ceux qui ont déjà essayé — et qui veulent que cette fois, ça tienne.">
+<meta property="og:image" content="_PRO1584-Modifier.jpg">
+<meta property="og:type" content="website">
+
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1152376082444766');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1152376082444766&ev=PageView&noscript=1"/></noscript>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+
 <style>
+/* ============ RESET & BASE ============ */
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{font-family:'DM Sans',Arial,sans-serif;background:#050d18;color:#e8edf2;font-size:16px;line-height:1.7;padding-bottom:72px}
-:root{--gold:#E8C547;--teal:#4ECDC4;--orange:#F4845F;--green:#56CF8A;--purple:#A78BFA;--muted:#7a94a8;--white:#e8edf2;--dark2:#0D1B2A}
-h1,h2,h3{font-family:'Bebas Neue','Impact',sans-serif;letter-spacing:1px;line-height:1.05}
-p{color:#b8ccd8} strong{color:var(--white)} a{text-decoration:none;color:inherit}
-.container{max-width:820px;margin:0 auto;padding:0 28px}
-.section{padding:68px 0;position:relative;z-index:1}
-.s-alt{background:#0D1B2A;position:relative;z-index:1}
-hr.d{border:none;border-top:1px solid rgba(255,255,255,0.06)}
-body::before{content:'';position:fixed;inset:0;
-  background-image:linear-gradient(rgba(78,205,196,0.025) 1px,transparent 1px),linear-gradient(90deg,rgba(78,205,196,0.025) 1px,transparent 1px);
-  background-size:70px 70px;pointer-events:none;z-index:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
 
-/* STICKY */
-.sticky{display:none;position:fixed;bottom:0;left:0;right:0;z-index:200;
-  background:rgba(5,13,24,0.97);backdrop-filter:blur(12px);
-  border-top:1px solid rgba(232,197,71,0.2);padding:12px 20px;align-items:center;gap:12px}
-@media(max-width:640px){.sticky{display:flex}}
-.sticky strong{color:var(--white);display:block;font-size:14px}
-.sticky span{font-size:13px;color:var(--muted);flex:1}
+:root{
+  --bg:#0D1B2A;
+  --bg-alt:#0a1521;
+  --bg-card:#122536;
+  --gold:#E8C547;
+  --gold-dim:#c9a838;
+  --gold-soft:rgba(232,197,71,.12);
+  --gold-border:rgba(232,197,71,.3);
+  --text:#EAEEF2;
+  --text-dim:#A8B4BF;
+  --text-mute:#6C7A88;
+  --border:rgba(234,238,242,.08);
+  --border-strong:rgba(234,238,242,.15);
+  --shadow:0 20px 60px rgba(0,0,0,.4);
+  --max:1200px;
+  --radius:4px;
+}
 
-/* BTN */
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;
-  background:var(--gold);color:#050d18;font-family:'DM Sans',Arial,sans-serif;
-  font-weight:700;font-size:16px;padding:16px 36px;border-radius:6px;
-  cursor:pointer;border:none;transition:all .2s;text-decoration:none}
-.btn:hover{background:#f5d254;transform:translateY(-2px);box-shadow:0 8px 32px rgba(232,197,71,.25)}
-.btn-sm{padding:12px 22px;font-size:14px}
-.btn-note{font-size:12px;color:var(--muted)}
-.bwrap{display:flex;flex-wrap:wrap;gap:14px;align-items:center}
+body{
+  font-family:'DM Sans',system-ui,sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  line-height:1.6;
+  font-size:16px;
+  overflow-x:hidden;
+}
 
-/* HERO */
-.hero{background:linear-gradient(160deg,#020810 0%,#050d18 40%,#0a1520 100%);
-  padding:42px 0 38px;position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:center}
-.hg1{position:absolute;top:-150px;left:-100px;width:600px;height:600px;
-  background:radial-gradient(circle,rgba(78,205,196,0.07) 0%,transparent 65%);pointer-events:none}
-.hg2{position:absolute;bottom:-100px;right:-80px;width:500px;height:500px;
-  background:radial-gradient(circle,rgba(232,197,71,0.06) 0%,transparent 65%);pointer-events:none}
-.hstripe{position:absolute;left:0;top:0;bottom:0;width:3px;
-  background:linear-gradient(to bottom,transparent,var(--gold) 30%,var(--gold) 70%,transparent);opacity:.5}
-.himg{position:absolute;right:0;top:0;bottom:0;width:42%;
-  clip-path:polygon(12% 0,100% 0,100% 100%,0% 100%);overflow:hidden;opacity:.18}
-.himg img{width:100%;height:100%;object-fit:cover;object-position:top center}
-@media(max-width:768px){.himg{display:none}}
-.eyebrow{display:inline-flex;align-items:center;gap:8px;
-  background:rgba(78,205,196,0.08);border:1px solid rgba(78,205,196,0.2);
-  color:var(--teal);font-size:11px;font-weight:700;letter-spacing:2.5px;
-  text-transform:uppercase;padding:6px 16px;border-radius:100px;margin-bottom:24px}
-.edot{width:6px;height:6px;background:var(--teal);border-radius:50%;animation:pulse 2s infinite}
-@keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
-.hero h1{font-size:clamp(2.2rem,5vw,4rem);color:var(--white);margin-bottom:4px;line-height:.92}
-.hero h1 em{color:var(--gold);font-style:normal}
-.hrule{width:50px;height:3px;background:var(--gold);margin:8px 0;position:relative}
-.hrule::after{content:'';position:absolute;left:60px;top:50%;transform:translateY(-50%);
-  width:180px;height:1px;background:linear-gradient(to right,rgba(232,197,71,.35),transparent)}
-.hsub{font-size:.95rem;color:#8aa8be;max-width:540px;margin-bottom:10px;line-height:1.5}
-.urg{display:inline-flex;align-items:center;gap:10px;
-  background:rgba(232,197,71,0.07);border:1px solid rgba(232,197,71,0.18);
-  border-radius:8px;padding:7px 14px;margin-bottom:12px;font-size:12px;color:var(--gold)}
-.udot{width:7px;height:7px;background:var(--gold);border-radius:50%;animation:pulse 1.5s infinite;flex-shrink:0}
+body::before{
+  content:"";position:fixed;inset:0;pointer-events:none;z-index:1;opacity:.035;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence baseFrequency='.8' seed='5'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
 
-/* OBJECTIONS */
-.obj-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
-.obj-pill{display:flex;align-items:center;gap:7px;font-size:13px;color:#8aa8be;
-  background:rgba(86,207,138,0.07);border:1px solid rgba(86,207,138,0.18);border-radius:6px;padding:6px 12px}
+/* ============ TYPOGRAPHY ============ */
+h1,h2,h3,.display{
+  font-family:'Bebas Neue',sans-serif;
+  font-weight:400;
+  letter-spacing:.02em;
+  line-height:1.05;
+}
+h1{font-size:clamp(2.5rem,6.5vw,5.5rem)}
+h2{font-size:clamp(2rem,4.5vw,3.75rem)}
+h3{font-size:clamp(1.35rem,2.5vw,1.75rem)}
 
-/* GIFT HERO BLOCK */
-.gift-b{background:linear-gradient(135deg,rgba(78,205,196,0.07),rgba(167,139,250,0.04));
-  border:1px solid rgba(78,205,196,0.22);border-radius:12px;padding:20px 24px;margin-top:16px;
-  display:grid;grid-template-columns:auto 1fr;gap:16px;align-items:start}
-.gift-ico{font-size:30px;line-height:1}
-.glabel{font-size:10px;font-weight:700;letter-spacing:2px;color:var(--teal);text-transform:uppercase;margin-bottom:4px}
-.gtitle{font-size:14px;font-weight:700;color:var(--white);margin-bottom:4px}
-.gitems{display:flex;flex-wrap:wrap;gap:5px;margin:6px 0}
-.gpill{font-size:11px;background:rgba(78,205,196,0.09);border:1px solid rgba(78,205,196,0.15);color:var(--teal);padding:2px 9px;border-radius:100px}
-.gpill-g{background:rgba(232,197,71,0.09);border-color:rgba(232,197,71,0.2);color:var(--gold)}
-.gval{font-size:12px;color:var(--muted);margin-top:4px}
-.gval strong{color:var(--teal)}
+.eyebrow{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:.85rem;letter-spacing:.25em;color:var(--gold);
+  text-transform:uppercase;display:inline-block;
+}
+em{color:var(--gold);font-style:italic}
+strong{font-weight:700;color:var(--text)}
 
-/* COVER CADEAU */
-.cover-cadeau{border-radius:12px;overflow:hidden;margin:20px 0;box-shadow:0 4px 24px rgba(0,0,0,.5)}
-.cover-cadeau img{width:100%;display:block}
+/* ============ LAYOUT ============ */
+.wrap{max-width:var(--max);margin:0 auto;padding:0 clamp(1.25rem,4vw,2.5rem);position:relative;z-index:2}
+section{padding:clamp(4rem,9vw,7rem) 0;position:relative}
+.section-header{text-align:center;margin-bottom:clamp(2.5rem,5vw,4rem)}
+.section-header .eyebrow{margin-bottom:1rem}
+.section-header h2{margin-bottom:1rem}
+.section-header p.intro{max-width:650px;margin:0 auto;color:var(--text-dim);font-size:1.1rem}
 
-/* SLABEL */
-.sl{font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;margin-bottom:10px}
-.sl-g{color:var(--gold)}.sl-t{color:var(--teal)}.sl-m{color:var(--muted)}
+/* ============ NAV ============ */
+.nav{
+  position:sticky;top:0;z-index:100;
+  background:rgba(13,27,42,.85);
+  backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--border);
+}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;padding:1rem 0;gap:1rem}
+.logo{font-family:'Bebas Neue',sans-serif;font-size:1.4rem;letter-spacing:.15em;color:var(--text)}
+.logo span{color:var(--gold)}
+.nav-meta{font-size:.85rem;color:var(--text-dim);display:none}
+@media(min-width:640px){.nav-meta{display:block}}
 
-/* FONDATIONS BADGE */
-.fondations-mention{background:rgba(167,139,250,0.07);border:1px solid rgba(167,139,250,0.2);
-  border-radius:10px;padding:16px 20px;margin-bottom:24px;display:flex;align-items:flex-start;gap:14px}
-.fondations-mention-icon{font-size:24px;flex-shrink:0}
-.fondations-mention-label{font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--purple);margin-bottom:4px}
-.fondations-mention-text{font-size:13px;color:#8aa8be;line-height:1.6}
+/* ============ BUTTONS ============ */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:.5rem;
+  font-family:'Bebas Neue',sans-serif;font-size:1.1rem;letter-spacing:.12em;
+  text-transform:uppercase;padding:1.15rem 2.2rem;border:none;
+  border-radius:var(--radius);cursor:pointer;
+  transition:transform .2s ease,box-shadow .2s ease,background .2s ease;
+  text-decoration:none;white-space:nowrap;
+}
+.btn-gold{background:var(--gold);color:var(--bg);box-shadow:0 8px 30px rgba(232,197,71,.25)}
+.btn-gold:hover{transform:translateY(-2px);box-shadow:0 12px 40px rgba(232,197,71,.4);background:#f3d25c}
+.btn-ghost{background:transparent;color:var(--text);border:1px solid var(--border-strong);padding:.7rem 1.3rem;font-size:.95rem}
+.btn-ghost:hover{background:var(--gold-soft);border-color:var(--gold)}
+.btn-lg{font-size:1.25rem;padding:1.35rem 2.8rem}
 
-/* TARGET */
-.tlist{display:flex;flex-direction:column;gap:10px}
-.titem{display:grid;grid-template-columns:26px 1fr;gap:12px;padding:13px 16px;
-  background:rgba(255,255,255,0.025);border:1px solid rgba(255,255,255,0.06);
-  border-left:2px solid rgba(232,197,71,0.3);border-radius:0 8px 8px 0}
-.tarrow{color:var(--gold);font-size:14px;margin-top:2px}
-.tmain{font-size:15px;color:var(--white);font-weight:500;margin-bottom:3px}
-.tres{font-size:12px;color:var(--teal)}
+/* ============ HERO — FULL BACKGROUND IMAGE ============ */
+.hero{
+  position:relative;
+  min-height:clamp(650px,90vh,900px);
+  display:flex;align-items:center;
+  overflow:hidden;
+  padding:clamp(4rem,8vw,6rem) 0 clamp(3rem,5vw,4rem);
+}
+.hero-bg{
+  position:absolute;inset:0;z-index:0;
+  background-image:url('_PRO1584-Modifier.jpg');
+  background-size:cover;
+  background-position:65% center;
+  background-repeat:no-repeat;
+}
+/* Overlay qui fond à gauche (texte dense) → transparent à droite (image visible) */
+.hero-overlay{
+  position:absolute;inset:0;z-index:1;
+  background:
+    linear-gradient(90deg,
+      rgba(13,27,42,.98) 0%,
+      rgba(13,27,42,.95) 25%,
+      rgba(13,27,42,.75) 50%,
+      rgba(13,27,42,.4) 75%,
+      rgba(13,27,42,.2) 100%
+    );
+}
+/* Overlay secondaire vertical très léger pour densifier le bas */
+.hero-overlay::after{
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(180deg,rgba(13,27,42,.2) 0%,transparent 30%,transparent 70%,rgba(13,27,42,.4) 100%);
+}
 
-/* STORY */
-.swrap{position:relative;padding-left:32px}
-.swrap::before{content:'';position:absolute;left:9px;top:8px;bottom:8px;width:2px;
-  background:linear-gradient(to bottom,var(--teal),var(--gold),var(--orange));opacity:.3}
-.sitem{position:relative;padding:0 0 26px 24px}
-.sitem:last-child{padding-bottom:0}
-.sdot{position:absolute;left:-23px;top:3px;width:20px;height:20px;border-radius:50%;
-  background:var(--dark2);border:2px solid rgba(232,197,71,.4);
+@media(max-width:768px){
+  .hero-overlay{
+    background:linear-gradient(180deg,
+      rgba(13,27,42,.7) 0%,
+      rgba(13,27,42,.88) 45%,
+      rgba(13,27,42,.96) 100%
+    );
+  }
+  .hero-bg{background-position:70% 25%}
+}
+
+.hero-content{position:relative;z-index:2;max-width:680px}
+
+.hero-eyebrow-badge{
+  display:inline-flex;align-items:center;gap:.6rem;
+  padding:.55rem 1.1rem;
+  background:rgba(13,27,42,.55);
+  border:1px solid var(--gold-border);
+  border-radius:100px;
+  backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);
+  margin-bottom:1.75rem;
+}
+.hero-eyebrow-badge::before{
+  content:"";width:6px;height:6px;border-radius:50%;background:var(--gold);
+  animation:pulse 2s infinite;
+}
+.hero-eyebrow-badge span{
+  font-family:'Bebas Neue',sans-serif;font-size:.8rem;letter-spacing:.2em;color:var(--gold);
+}
+
+.hero h1{margin:0 0 1.5rem;text-shadow:0 2px 25px rgba(0,0,0,.6)}
+.hero h1 .underline{position:relative;display:inline-block;padding-bottom:.1em}
+.hero h1 .underline::after{content:"";position:absolute;bottom:0;left:0;width:80px;height:4px;background:var(--gold)}
+
+.hero-subtitle{
+  font-size:clamp(1.05rem,1.5vw,1.2rem);
+  color:var(--text);max-width:560px;margin-bottom:2.25rem;line-height:1.55;
+  text-shadow:0 2px 15px rgba(0,0,0,.5);
+}
+.hero-subtitle strong{color:var(--gold);font-weight:500}
+
+.hero-scarcity{
+  display:inline-flex;align-items:center;gap:.6rem;
+  padding:.7rem 1.1rem;margin-bottom:1.75rem;
+  background:rgba(13,27,42,.6);border:1px solid var(--gold-border);
+  border-radius:var(--radius);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);
+  font-size:.88rem;color:var(--gold);letter-spacing:.05em;
+}
+.hero-scarcity::before{content:"";width:8px;height:8px;background:var(--gold);border-radius:50%;animation:pulse 2s infinite}
+
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+
+.hero-cta-block{display:flex;flex-direction:column;gap:.85rem;align-items:flex-start}
+.hero-cta-note{font-size:.88rem;color:var(--text-dim);letter-spacing:.02em;text-shadow:0 2px 10px rgba(0,0,0,.5)}
+
+/* Trust bar */
+.trust-bar{
+  background:var(--bg-alt);
+  border-top:1px solid var(--border);
+  border-bottom:1px solid var(--border);
+  padding:1.5rem 0;
+}
+.trust-bar-inner{
+  display:flex;flex-wrap:wrap;justify-content:center;gap:1rem 2rem;
+  font-size:.88rem;color:var(--text-dim);text-align:center;
+}
+.trust-bar strong{color:var(--text);font-weight:500}
+.trust-item{display:flex;align-items:center;gap:.5rem}
+.trust-item::before{content:"";width:4px;height:4px;border-radius:50%;background:var(--gold);display:inline-block}
+
+/* ============ GIFTS BLOCK ============ */
+.gifts{background:linear-gradient(180deg,var(--bg) 0%,var(--bg-alt) 100%)}
+.gifts-grid{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:1.25rem;margin-bottom:2.5rem;
+}
+.gift-card{
+  background:var(--bg-card);border:1px solid var(--border);
+  border-radius:var(--radius);padding:2rem 1.75rem;
+  transition:border-color .3s,transform .3s;position:relative;overflow:hidden;
+}
+.gift-card:hover{border-color:var(--gold-border);transform:translateY(-4px)}
+.gift-card::before{content:"";position:absolute;top:0;left:0;width:40px;height:3px;background:var(--gold)}
+.gift-card h3{margin-bottom:1rem;color:var(--text)}
+.gift-card p{color:var(--text-dim);font-size:.95rem;margin-bottom:1.25rem;line-height:1.6}
+.gift-value{
+  font-family:'Bebas Neue',sans-serif;font-size:1rem;letter-spacing:.1em;
+  color:var(--gold);border-top:1px solid var(--border);padding-top:1rem;
+}
+
+.gifts-total{
+  text-align:center;padding:2rem;
+  background:var(--gold-soft);border:1px solid var(--gold-border);
+  border-radius:var(--radius);max-width:500px;margin:0 auto;
+}
+.gifts-total .amount{
+  font-family:'Bebas Neue',sans-serif;font-size:clamp(3rem,7vw,4.5rem);
+  color:var(--gold);line-height:1;display:block;
+}
+.gifts-total .label{font-size:.95rem;color:var(--text);letter-spacing:.05em;margin-top:.5rem;display:block}
+
+/* ============ HUMAN BREAK ============ */
+.human-break{position:relative;margin:0;overflow:hidden;max-height:550px}
+.human-break img{
+  width:100%;height:100%;object-fit:cover;display:block;
+  min-height:400px;max-height:550px;object-position:center 30%;
+}
+.human-break-overlay{
+  position:absolute;inset:0;
+  background:linear-gradient(180deg,rgba(13,27,42,.3) 0%,transparent 30%,transparent 70%,rgba(13,27,42,.4) 100%);
+  pointer-events:none;
+}
+.human-break-caption{
+  position:absolute;bottom:0;left:0;right:0;
+  padding:2rem clamp(1.5rem,4vw,3rem);
+  background:linear-gradient(0deg,rgba(13,27,42,.85) 0%,transparent 100%);z-index:2;
+}
+.human-break-caption p{
+  max-width:var(--max);margin:0 auto;
+  font-family:'Bebas Neue',sans-serif;font-size:clamp(1.2rem,2.5vw,1.8rem);
+  color:var(--gold);letter-spacing:.02em;text-align:center;
+}
+
+/* ============ PROBLEM BLOCK ============ */
+.problem-grid{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:1.5rem;margin-top:2.5rem;
+}
+.problem-card{
+  background:var(--bg-card);padding:2rem 1.75rem;
+  border-radius:var(--radius);border-left:3px solid var(--gold);
+  transition:transform .3s;
+}
+.problem-card:hover{transform:translateX(4px)}
+.problem-num{
+  font-family:'Bebas Neue',sans-serif;font-size:2.25rem;color:var(--gold);
+  line-height:1;margin-bottom:.75rem;display:block;
+}
+.problem-card h3{
+  font-size:1.15rem;margin-bottom:.5rem;color:var(--text);
+  font-family:'DM Sans',sans-serif;font-weight:700;letter-spacing:0;
+}
+.problem-card p{font-size:.95rem;color:var(--text-dim)}
+
+.problem-quote{
+  text-align:center;margin-top:4rem;
+  font-family:'Bebas Neue',sans-serif;font-size:clamp(1.5rem,3.5vw,2.5rem);
+  color:var(--gold);line-height:1.3;letter-spacing:.02em;
+  max-width:800px;margin-left:auto;margin-right:auto;
+}
+.problem-quote span{display:block;color:var(--text);font-size:.75em;margin-top:.5rem}
+
+.problem-img{margin-top:4rem;position:relative;max-width:900px;margin-left:auto;margin-right:auto}
+.problem-img img{
+  width:100%;aspect-ratio:16/9;object-fit:cover;
+  border-radius:var(--radius);object-position:center 40%;
+}
+
+/* ============ TIMELINE ============ */
+.timeline{position:relative;max-width:800px;margin:0 auto}
+.timeline::before{content:"";position:absolute;left:1rem;top:0;bottom:0;width:2px;background:var(--border-strong)}
+@media(min-width:640px){.timeline::before{left:8.5rem}}
+
+.timeline-item{position:relative;padding-left:3rem;margin-bottom:3rem}
+@media(min-width:640px){.timeline-item{padding-left:11rem}}
+.timeline-item::before{
+  content:"";position:absolute;left:.55rem;top:.6rem;width:12px;height:12px;
+  background:var(--gold);border-radius:50%;box-shadow:0 0 0 4px var(--bg);
+}
+@media(min-width:640px){.timeline-item::before{left:8.05rem}}
+
+.timeline-year{
+  font-family:'Bebas Neue',sans-serif;color:var(--gold);font-size:1.35rem;
+  letter-spacing:.1em;margin-bottom:.5rem;display:block;
+}
+@media(min-width:640px){.timeline-year{position:absolute;left:0;top:0;width:7rem;text-align:right}}
+.timeline-item h3{
+  font-family:'DM Sans',sans-serif;font-size:1.1rem;font-weight:700;letter-spacing:.05em;
+  text-transform:uppercase;margin-bottom:.75rem;color:var(--text);
+}
+.timeline-item p{color:var(--text-dim);font-size:1rem;line-height:1.7}
+
+.story-closing{
+  background:var(--gold-soft);border:1px solid var(--gold-border);
+  padding:2.5rem;border-radius:var(--radius);
+  max-width:800px;margin:4rem auto 0;
+  font-size:1.08rem;line-height:1.7;color:var(--text);
+  border-left:4px solid var(--gold);
+}
+
+.story-transform{margin:4rem auto 0;max-width:900px;text-align:center}
+.story-transform img{width:100%;border-radius:var(--radius);box-shadow:var(--shadow)}
+.story-transform-caption{margin-top:1.25rem;color:var(--text-dim);font-size:.95rem;font-style:italic}
+.story-transform-caption strong{
+  color:var(--gold);font-style:normal;letter-spacing:.1em;display:block;margin-bottom:.3rem;
+  font-family:'Bebas Neue',sans-serif;font-size:1.1rem;
+}
+
+.coach-card{
+  display:grid;grid-template-columns:1fr;gap:2rem;
+  max-width:900px;margin:4rem auto 0;
+  background:var(--bg-card);padding:2.5rem;border-radius:var(--radius);
+  border:1px solid var(--border);
+}
+@media(min-width:640px){.coach-card{grid-template-columns:200px 1fr}}
+.coach-img{width:100%;aspect-ratio:1;object-fit:cover;border-radius:var(--radius)}
+.coach-info h3{font-family:'Bebas Neue',sans-serif;font-size:2rem;color:var(--text);margin-bottom:.3rem;letter-spacing:.02em}
+.coach-info .coach-title{
+  color:var(--gold);letter-spacing:.15em;text-transform:uppercase;
+  margin-bottom:1.25rem;font-family:'Bebas Neue',sans-serif;font-size:1rem;
+}
+.coach-certs{list-style:none;margin-bottom:1.25rem}
+.coach-certs li{color:var(--text-dim);font-size:.95rem;padding:.3rem 0;display:flex;align-items:center;gap:.6rem}
+.coach-certs li::before{content:"";width:6px;height:6px;background:var(--gold);border-radius:50%;flex-shrink:0}
+.coach-quote{font-style:italic;color:var(--text);border-left:3px solid var(--gold);padding-left:1rem;font-size:.98rem;line-height:1.6}
+
+/* ============ TESTIMONIALS ============ */
+.testim-banner{
+  text-align:center;padding:1.25rem 1.5rem;
+  background:var(--gold-soft);border:1px solid var(--gold-border);
+  border-radius:var(--radius);margin-bottom:3rem;
+  font-size:1rem;color:var(--text);letter-spacing:.02em;
+}
+.testim-banner strong{color:var(--gold)}
+
+.testim-grid{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+  gap:1.5rem;margin-bottom:3rem;
+}
+.testim-card{
+  background:var(--bg-card);padding:2rem;border-radius:var(--radius);
+  border:1px solid var(--border);display:flex;flex-direction:column;
+}
+.testim-header{display:flex;align-items:center;gap:1rem;margin-bottom:1.25rem}
+.testim-avatar{
+  width:50px;height:50px;border-radius:50%;
+  background:var(--gold);color:var(--bg);
   display:flex;align-items:center;justify-content:center;
-  font-family:'Bebas Neue','Impact',sans-serif;font-size:8px;color:var(--gold);z-index:1}
-.syear{font-size:11px;font-weight:700;letter-spacing:1.5px;color:var(--gold);text-transform:uppercase;margin-bottom:3px}
-.stitle{font-size:15px;font-weight:700;color:var(--white);margin-bottom:4px}
-.stxt{font-size:14px;color:#8aa8be;line-height:1.65}
-.sconc{background:rgba(232,197,71,0.06);border-left:3px solid var(--gold);
-  border-radius:0 8px 8px 0;padding:18px 22px;margin-top:8px;font-size:14px;color:#b8ccd8;line-height:1.7}
+  font-family:'Bebas Neue',sans-serif;font-size:1.4rem;flex-shrink:0;
+}
+.testim-name{font-weight:700;color:var(--text);font-size:1.05rem;line-height:1.2}
+.testim-meta{color:var(--text-mute);font-size:.85rem;margin-top:.15rem}
+.testim-quote{
+  color:var(--text-dim);font-size:.95rem;line-height:1.65;font-style:italic;
+  flex:1;margin-bottom:1.25rem;
+}
+.testim-result{
+  padding-top:1rem;border-top:1px solid var(--border);
+  font-size:.88rem;color:var(--gold);letter-spacing:.02em;
+}
 
-/* COACH */
-.ccard{display:flex;gap:20px;align-items:flex-start;background:rgba(255,255,255,0.03);
-  border:1px solid rgba(255,255,255,0.07);border-radius:12px;padding:24px;flex-wrap:wrap;margin-top:24px}
-.cav{width:64px;height:64px;border-radius:50%;overflow:hidden;flex-shrink:0;border:2px solid rgba(232,197,71,.3)}
-.cav img{width:100%;height:100%;object-fit:cover}
-.cname{font-weight:700;font-size:16px;color:var(--white)}
-.crole{font-size:13px;color:var(--muted);margin-bottom:8px}
-.ccreds{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:8px}
-.ccred{font-size:11px;background:rgba(78,205,196,0.08);border:1px solid rgba(78,205,196,0.15);color:var(--teal);padding:2px 8px;border-radius:4px}
-.cquote{font-size:14px;color:#8aa8be;font-style:italic}
+.testim-gallery{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:1rem;margin-bottom:3rem;
+}
+.testim-gallery img{
+  width:100%;aspect-ratio:1;object-fit:cover;
+  border-radius:var(--radius);transition:transform .3s;
+}
+.testim-gallery img:hover{transform:scale(1.03)}
 
-/* VIDEO */
-.vwrap{border-radius:12px;overflow:hidden;background:#000;margin:14px 0}
-.vwrap video{width:100%;display:block;object-fit:contain}
-.vp{max-width:380px;margin:14px auto}
-.vp video{max-height:660px}
-.vl video{max-height:420px}
+.testim-once-wrap{
+  display:grid;grid-template-columns:1fr;gap:2rem;
+  max-width:1000px;margin:0 auto 3rem;align-items:center;
+}
+@media(min-width:768px){.testim-once-wrap{grid-template-columns:1fr 1fr;gap:3rem}}
 
-/* TESTI */
-.testi{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);border-radius:12px;padding:20px;margin-bottom:12px}
-.testi-h{display:flex;align-items:center;gap:12px;margin-bottom:10px}
-.tini{width:42px;height:42px;background:rgba(232,197,71,0.1);border-radius:50%;
-  display:flex;align-items:center;justify-content:center;
-  font-family:'Bebas Neue','Impact',sans-serif;font-size:16px;color:var(--gold);flex-shrink:0}
-.tname{font-weight:700;font-size:15px;color:var(--white)}
-.trole{font-size:12px;color:var(--muted)}
-.ttxt{font-size:14px;color:#8aa8be;font-style:italic;line-height:1.7}
-.tres2{font-size:12px;color:var(--teal);font-weight:700;margin-top:7px}
-.rnote{background:rgba(86,207,138,0.06);border:1px solid rgba(86,207,138,0.2);
-  border-radius:8px;padding:12px 18px;font-size:13px;color:#8aa8be;text-align:center;margin-bottom:18px}
-.rnote strong{color:#56CF8A}
+.testim-once-img{
+  width:100%;aspect-ratio:4/5;object-fit:cover;
+  border-radius:var(--radius);box-shadow:var(--shadow);
+}
+.testim-once{
+  background:var(--bg-card);border:1px solid var(--border);
+  padding:2.5rem;border-radius:var(--radius);
+}
+.testim-once h3{
+  font-family:'DM Sans',sans-serif;font-weight:700;font-size:1.15rem;letter-spacing:.05em;
+  text-transform:uppercase;color:var(--gold);margin-bottom:1.5rem;
+}
+.testim-once ul{list-style:none}
+.testim-once li{
+  padding:.85rem 0;color:var(--text-dim);font-size:1rem;line-height:1.6;
+  display:flex;align-items:flex-start;gap:.75rem;
+  border-bottom:1px solid var(--border);
+}
+.testim-once li:last-child{border:0}
+.testim-once li::before{content:"→";color:var(--gold);font-weight:700;flex-shrink:0;margin-top:.1rem}
 
-/* GALERIES */
-.g2{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:12px 0}
-.g3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin:12px 0}
-@media(max-width:540px){.g3{grid-template-columns:1fr 1fr}}
-.gi{width:100%;border-radius:8px;object-fit:cover;display:block}
-.afeel{background:rgba(232,197,71,0.04);border:1px solid rgba(232,197,71,0.12);border-radius:12px;padding:24px;margin:24px 0}
-.afeel-t{font-size:11px;font-weight:700;letter-spacing:2px;color:var(--muted);text-transform:uppercase;margin-bottom:12px}
-.afl{display:flex;align-items:flex-start;gap:12px;font-size:15px;color:#b8ccd8;margin-bottom:9px}
-.afl::before{content:'✓';color:var(--gold);font-weight:700;font-size:14px;flex-shrink:0;margin-top:2px}
+.cta-mid{text-align:center;margin-top:2rem}
+.cta-mid .btn{margin-bottom:1rem}
+.cta-mid p{color:var(--text-mute);font-size:.88rem}
 
-/* PROCESS */
-.pstep{display:flex;gap:18px;padding:20px 0;border-bottom:1px solid rgba(255,255,255,0.05)}
-.pstep:last-child{border-bottom:none}
-.pnum{flex-shrink:0;width:38px;height:38px;background:rgba(232,197,71,0.09);
-  border:1px solid rgba(232,197,71,0.22);border-radius:50%;display:flex;align-items:center;justify-content:center;
-  font-family:'Bebas Neue','Impact',sans-serif;font-size:18px;color:var(--gold)}
-.ptitle{font-size:15px;font-weight:700;color:var(--white);margin-bottom:3px}
-.pdesc{font-size:14px;color:#8aa8be}
-.bgrid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:16px}
-@media(max-width:500px){.bgrid{grid-template-columns:1fr}}
-.bi{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);border-radius:10px;padding:14px}
-.biico{font-size:18px;margin-bottom:6px}
-.bilbl{font-size:13px;font-weight:700;color:var(--white);margin-bottom:3px}
-.bidsc{font-size:12px;color:var(--muted)}
+/* ============ METHOD ============ */
+.method-steps{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:1.5rem;margin-bottom:4rem;
+}
+.method-step{
+  background:var(--bg-card);padding:2rem 1.75rem;border-radius:var(--radius);
+  border:1px solid var(--border);position:relative;transition:border-color .3s;
+}
+.method-step:hover{border-color:var(--gold-border)}
+.step-num{
+  font-family:'Bebas Neue',sans-serif;font-size:3.5rem;line-height:1;
+  color:var(--gold);display:block;margin-bottom:.75rem;letter-spacing:.05em;
+}
+.method-step h3{
+  font-family:'DM Sans',sans-serif;font-size:1rem;font-weight:700;
+  letter-spacing:.08em;text-transform:uppercase;color:var(--text);margin-bottom:.75rem;
+}
+.method-step p{color:var(--text-dim);font-size:.95rem;line-height:1.6}
 
-/* CADEAUX */
-.csect{background:linear-gradient(135deg,#060f1c,#0a1a2e);
-  border-top:1px solid rgba(78,205,196,0.12);border-bottom:1px solid rgba(78,205,196,0.12);position:relative;z-index:1}
-.cwrap{border:1px solid rgba(78,205,196,0.2);border-radius:14px;overflow:hidden;margin-bottom:18px}
-.chdr{background:linear-gradient(90deg,rgba(78,205,196,0.12),rgba(167,139,250,0.06));
-  padding:14px 22px;display:flex;align-items:center;gap:12px;border-bottom:1px solid rgba(78,205,196,0.12)}
-.chdr-ico{font-size:26px}
-.chdr-lbl{font-size:10px;font-weight:700;letter-spacing:2px;color:var(--teal);text-transform:uppercase}
-.chdr-ttl{font-size:15px;font-weight:700;color:var(--white)}
-.chdr-val{margin-left:auto;font-size:12px;color:var(--teal);white-space:nowrap}
-.cbody{padding:18px 22px}
-.cdesc{font-size:14px;color:#8aa8be;margin-bottom:14px;line-height:1.65}
-.cmods{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:12px}
-.cmod{font-size:11px;background:rgba(232,197,71,0.08);border:1px solid rgba(232,197,71,0.18);color:var(--gold);padding:3px 10px;border-radius:100px;font-weight:600}
-.fmods{display:flex;flex-direction:column;gap:10px;margin-top:10px}
-.fm{background:rgba(255,255,255,0.02);border-left:2px solid;border-radius:0 8px 8px 0;padding:12px 16px}
-.fm.m1{border-color:var(--teal)}.fm.m2{border-color:var(--gold)}.fm.m3{border-color:var(--orange)}
-.fmbadge{font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:4px}
-.fm.m1 .fmbadge{color:var(--teal)}.fm.m2 .fmbadge{color:var(--gold)}.fm.m3 .fmbadge{color:var(--orange)}
-.fmtitle{font-size:14px;font-weight:700;color:var(--white);margin-bottom:3px}
-.fmtxt{font-size:13px;color:#8aa8be;line-height:1.6}
-.fmkey{font-size:12px;margin-top:5px}
-.fm.m1 .fmkey{color:var(--teal)}.fm.m2 .fmkey{color:var(--gold)}.fm.m3 .fmkey{color:var(--orange)}
-.total-box{text-align:center;padding:22px;background:rgba(232,197,71,0.06);border:1px solid rgba(232,197,71,0.18);border-radius:12px;margin-top:6px}
-.total-num{font-family:'Bebas Neue','Impact',sans-serif;font-size:3.2rem;color:var(--gold);line-height:1}
+.bilan-contents{
+  background:var(--bg-alt);padding:2.5rem;border-radius:var(--radius);
+  border:1px solid var(--border);margin-bottom:3rem;
+}
+.bilan-contents h3{
+  font-family:'DM Sans',sans-serif;font-size:1rem;font-weight:700;
+  letter-spacing:.1em;text-transform:uppercase;color:var(--gold);
+  margin-bottom:1.5rem;text-align:center;
+}
+.bilan-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1.25rem}
+.bilan-item{text-align:center;padding:1.25rem}
+.bilan-item .num{
+  display:block;font-family:'Bebas Neue',sans-serif;font-size:1.5rem;
+  color:var(--gold);margin-bottom:.35rem;letter-spacing:.08em;
+}
+.bilan-item h4{
+  font-family:'DM Sans',sans-serif;font-weight:700;font-size:1rem;
+  color:var(--text);margin-bottom:.35rem;letter-spacing:.02em;
+}
+.bilan-item p{font-size:.88rem;color:var(--text-dim);line-height:1.55}
 
-/* FAQ */
-.fi{border:1px solid rgba(255,255,255,0.07);border-radius:10px;overflow:hidden;margin-bottom:8px}
-.fq{padding:15px 18px;font-weight:700;font-size:15px;color:var(--white);
-  background:rgba(255,255,255,0.025);cursor:pointer;user-select:none;
-  display:flex;justify-content:space-between;align-items:center;gap:12px}
-.fq::after{content:'+';color:var(--gold);font-size:20px;flex-shrink:0}
-.fa{padding:0 18px 14px;font-size:14px;color:#8aa8be;display:none}
-.fi.open .fa{display:block}
-.fi.open .fq::after{content:'−'}
+.studio-gallery{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  gap:1rem;margin-top:2.5rem;
+}
+.studio-gallery img{
+  width:100%;aspect-ratio:4/5;object-fit:cover;
+  border-radius:var(--radius);transition:transform .4s ease,filter .4s ease;
+  filter:saturate(.95);
+}
+.studio-gallery img:hover{transform:scale(1.02);filter:saturate(1.1)}
 
-/* LOC */
-.lbox{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);
-  border-radius:12px;padding:22px;display:flex;gap:16px;flex-wrap:wrap}
-.lname{font-weight:700;font-size:16px;color:var(--white);margin-bottom:4px}
-.laddr{font-size:14px;color:#8aa8be;margin-bottom:8px}
-.lct a{color:var(--teal)}
+/* ============ FONDATIONS ============ */
+.fond{background:var(--bg-alt);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.fond-modules{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+  gap:1.5rem;margin-bottom:3rem;
+}
+.fond-mod{
+  background:var(--bg-card);padding:2rem;border-radius:var(--radius);
+  border:1px solid var(--border);border-top:3px solid var(--gold);
+  transition:transform .3s;
+}
+.fond-mod:hover{transform:translateY(-4px)}
+.fond-mod-tag{
+  font-family:'Bebas Neue',sans-serif;font-size:.8rem;letter-spacing:.2em;
+  color:var(--text-mute);display:block;margin-bottom:.5rem;
+}
+.fond-mod h3{
+  font-family:'Bebas Neue',sans-serif;font-size:1.75rem;color:var(--gold);
+  margin-bottom:1.25rem;letter-spacing:.03em;
+}
+.fond-mod p{color:var(--text-dim);font-size:.95rem;line-height:1.6;margin-bottom:1.25rem}
+.fond-mod .outcome{
+  padding-top:1.25rem;border-top:1px solid var(--border);
+  font-size:.9rem;color:var(--text);font-style:italic;
+}
+.fond-mod .outcome::before{content:"→ ";color:var(--gold);font-weight:700;font-style:normal}
 
-/* FINAL CTA */
-.fcta{background:linear-gradient(160deg,#020810,#050d18,#0a1520);
-  border-top:1px solid rgba(232,197,71,0.12);padding:72px 0;text-align:center;position:relative;overflow:hidden;z-index:1}
-.fcta::before{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
-  width:600px;height:300px;background:radial-gradient(ellipse,rgba(232,197,71,0.06),transparent 70%);pointer-events:none}
-.fcta h2{font-size:clamp(2rem,5vw,3.6rem);color:var(--white)}
-.fcta h2 em{color:var(--gold);font-style:normal}
+.fond-note{
+  background:var(--gold-soft);border:1px solid var(--gold-border);
+  padding:2rem 2.5rem;border-radius:var(--radius);
+  max-width:800px;margin:0 auto;
+  font-size:1rem;color:var(--text);line-height:1.7;
+  border-left:4px solid var(--gold);
+}
 
-/* MODAL */
-.mo{display:none;position:fixed;inset:0;z-index:1000;
-  background:rgba(2,8,16,0.88);backdrop-filter:blur(6px);align-items:center;justify-content:center;padding:20px}
-.mo.open{display:flex}
-.mb{background:#0D1B2A;border:1px solid rgba(78,205,196,0.25);border-radius:16px;
-  padding:32px 28px;width:100%;max-width:460px;position:relative;animation:mIn .25s ease;max-height:90vh;overflow-y:auto}
-@keyframes mIn{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
-.mc{position:absolute;top:12px;right:16px;background:none;border:none;color:var(--muted);font-size:22px;cursor:pointer;line-height:1}
-.mc:hover{color:var(--white)}
-.mtitle{font-family:'Bebas Neue','Impact',sans-serif;font-size:1.8rem;color:var(--white);margin-bottom:3px}
-.msub{font-size:13px;color:var(--muted);margin-bottom:18px;line-height:1.5}
-.mform{display:flex;flex-direction:column;gap:9px}
-.mi{width:100%;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12);
-  border-radius:8px;padding:12px 15px;font-family:'DM Sans',Arial,sans-serif;
-  font-size:15px;color:var(--white);outline:none;transition:border-color .2s}
-.mi::placeholder{color:var(--muted)}
-.mi:focus{border-color:var(--teal);background:rgba(78,205,196,0.05)}
-.mrgpd{font-size:11px;color:var(--muted);line-height:1.55}
-.mrgpd label{display:flex;align-items:flex-start;gap:8px;font-weight:normal;cursor:pointer}
-.mrgpd input[type=checkbox]{flex-shrink:0;margin-top:2px;accent-color:var(--gold);width:14px;height:14px}
-.msub-btn{width:100%;display:flex;justify-content:center;background:var(--gold);color:#050d18;
-  font-family:'DM Sans',Arial,sans-serif;font-weight:700;font-size:16px;padding:14px;
-  border-radius:8px;border:none;cursor:pointer;transition:all .2s;margin-top:3px}
-.msub-btn:hover{background:#f5d254;transform:translateY(-1px)}
-.mnote{font-size:11px;color:var(--muted);text-align:center;margin-top:5px}
-.mconf{display:none;text-align:center;padding:16px 0}
+/* ============ FAQ ============ */
+.faq{max-width:800px;margin:0 auto}
+.faq-item{border-bottom:1px solid var(--border);padding:0}
+.faq-item summary{
+  cursor:pointer;padding:1.5rem 0;
+  font-family:'DM Sans',sans-serif;font-weight:700;font-size:1.05rem;
+  color:var(--text);letter-spacing:.01em;list-style:none;
+  display:flex;justify-content:space-between;align-items:center;gap:1rem;
+  transition:color .2s;
+}
+.faq-item summary::-webkit-details-marker{display:none}
+.faq-item summary:hover{color:var(--gold)}
+.faq-item summary::after{
+  content:"+";font-family:'Bebas Neue',sans-serif;font-size:1.8rem;color:var(--gold);
+  transition:transform .3s;flex-shrink:0;line-height:1;
+}
+.faq-item[open] summary::after{transform:rotate(45deg)}
+.faq-item[open] summary{color:var(--gold)}
+.faq-answer{padding:0 0 1.75rem;color:var(--text-dim);line-height:1.75;font-size:.98rem}
+.faq-answer p{margin-bottom:1rem}
+.faq-answer p:last-child{margin-bottom:0}
 
-.mt8{margin-top:8px}.mt16{margin-top:16px}.mt24{margin-top:24px}.mt32{margin-top:32px}
-.mb16{margin-bottom:16px}.mb24{margin-bottom:24px}
-.tc{text-align:center}
+/* ============ LOCATION ============ */
+.location{text-align:center}
+.location-card{
+  background:var(--bg-card);padding:2.5rem;border-radius:var(--radius);
+  border:1px solid var(--border);max-width:600px;margin:0 auto 2rem;
+}
+.location-card h3{
+  font-family:'Bebas Neue',sans-serif;font-size:2rem;color:var(--gold);
+  margin-bottom:1rem;letter-spacing:.03em;
+}
+.location-card p{color:var(--text-dim);line-height:1.8;margin-bottom:.5rem}
+.location-card a{
+  color:var(--text);text-decoration:none;
+  border-bottom:1px solid var(--gold-border);
+  transition:color .2s,border-color .2s;
+}
+.location-card a:hover{color:var(--gold);border-color:var(--gold)}
+.location-img{width:100%;max-width:900px;margin:0 auto;display:block;border-radius:var(--radius);aspect-ratio:16/9;object-fit:cover}
+
+/* ============ FINAL CTA ============ */
+.final-cta{
+  position:relative;text-align:center;overflow:hidden;
+  border-top:1px solid var(--border);
+  padding:clamp(5rem,10vw,8rem) 0;
+}
+.final-cta-bg{
+  position:absolute;inset:0;z-index:0;
+  background-image:url('_PRO1687-Modifier.jpg');
+  background-size:cover;background-position:center center;background-repeat:no-repeat;
+}
+.final-cta-overlay{
+  position:absolute;inset:0;z-index:1;
+  background:linear-gradient(180deg,rgba(13,27,42,.92) 0%,rgba(13,27,42,.95) 100%);
+}
+.final-cta .wrap{position:relative;z-index:2}
+.final-cta h2{margin-bottom:1rem}
+.final-cta h2 em{color:var(--gold)}
+.final-cta .subtitle{max-width:600px;margin:0 auto 2.5rem;color:var(--text-dim);font-size:1.1rem;line-height:1.6}
+.final-micro{margin-top:1.5rem;color:var(--text-mute);font-size:.88rem;line-height:1.7}
+.final-micro strong{color:var(--text-dim);font-weight:500}
+
+/* ============ FOOTER ============ */
+footer{
+  padding:3rem 0 2rem;border-top:1px solid var(--border);
+  text-align:center;color:var(--text-mute);font-size:.85rem;
+}
+footer a{color:var(--text-dim);text-decoration:none;margin:0 .75rem;transition:color .2s}
+footer a:hover{color:var(--gold)}
+footer p{margin-bottom:.5rem}
+
+/* ============ STICKY MOBILE CTA ============ */
+.sticky-mobile{
+  display:none;position:fixed;bottom:0;left:0;right:0;z-index:150;
+  background:rgba(13,27,42,.97);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
+  border-top:1px solid var(--gold-border);padding:.75rem 1rem;gap:.75rem;
+  align-items:center;
+}
+@media(max-width:640px){.sticky-mobile{display:flex}body{padding-bottom:72px}}
+.sticky-mobile-text{flex:1;font-size:.82rem;color:var(--text-dim);line-height:1.3}
+.sticky-mobile-text strong{color:var(--text);display:block;font-size:.88rem;margin-bottom:.15rem}
+.sticky-mobile .btn{padding:.75rem 1.1rem;font-size:.85rem;letter-spacing:.08em}
+
+/* ============ MODAL ============ */
+.modal{
+  display:none;position:fixed;inset:0;z-index:200;
+  background:rgba(0,0,0,.8);padding:1.5rem;
+  align-items:center;justify-content:center;
+  backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px);
+}
+.modal.open{display:flex;animation:fadeIn .25s ease}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+
+.modal-box{
+  background:var(--bg-card);padding:2.5rem 2rem;border-radius:var(--radius);
+  max-width:480px;width:100%;border:1px solid var(--gold-border);
+  position:relative;max-height:90vh;overflow-y:auto;
+}
+.modal-close{
+  position:absolute;top:.75rem;right:.75rem;background:none;border:none;
+  color:var(--text-dim);font-size:1.5rem;cursor:pointer;padding:.25rem .6rem;
+  transition:color .2s;
+}
+.modal-close:hover{color:var(--gold)}
+.modal-title{
+  font-family:'Bebas Neue',sans-serif;font-size:2rem;color:var(--gold);
+  margin-bottom:.4rem;letter-spacing:.03em;
+}
+.modal-sub{color:var(--text-dim);margin-bottom:1.75rem;font-size:.95rem}
+
+.modal-form{display:flex;flex-direction:column;gap:.85rem}
+.modal-input{
+  width:100%;padding:.9rem 1rem;
+  background:var(--bg-alt);border:1px solid var(--border-strong);
+  border-radius:var(--radius);color:var(--text);
+  font-family:'DM Sans',sans-serif;font-size:.95rem;
+  transition:border-color .2s;
+}
+.modal-input:focus{outline:none;border-color:var(--gold)}
+.modal-input::placeholder{color:var(--text-mute)}
+
+.modal-rgpd{
+  display:flex;align-items:flex-start;gap:.6rem;
+  font-size:.78rem;color:var(--text-dim);line-height:1.4;margin:.25rem 0;
+}
+.modal-rgpd input{margin-top:.15rem;accent-color:var(--gold);flex-shrink:0}
+
+.modal-submit{
+  width:100%;padding:1rem;margin-top:.5rem;
+  background:var(--gold);color:var(--bg);
+  font-family:'Bebas Neue',sans-serif;font-size:1.1rem;letter-spacing:.08em;
+  border:none;border-radius:var(--radius);cursor:pointer;
+  transition:background .2s,transform .2s;text-transform:uppercase;
+}
+.modal-submit:hover{background:#f3d25c;transform:translateY(-1px)}
+.modal-note{
+  text-align:center;margin-top:.75rem;
+  font-size:.78rem;color:var(--text-mute);
+}
+
+/* Confirmation */
+.modal-confirm{display:none;text-align:center}
+.modal-confirm.show{display:block}
+.modal-confirm .icon{font-size:3.5rem;margin-bottom:1rem}
+.modal-confirm h4{
+  font-family:'Bebas Neue',sans-serif;font-size:1.8rem;color:var(--text);
+  margin-bottom:.75rem;letter-spacing:.02em;
+}
+.modal-confirm p{color:var(--text-dim);font-size:.95rem;line-height:1.65;margin-bottom:1rem}
+.modal-confirm p strong{color:var(--gold)}
+.modal-confirm-gift{
+  background:var(--gold-soft);border:1px solid var(--gold-border);
+  border-radius:var(--radius);padding:1rem 1.25rem;
+  font-size:.88rem;color:var(--text);margin-bottom:1.25rem;line-height:1.55;
+}
 </style>
 </head>
 <body>
 
-<div class="sticky">
-  <span><strong>Séance découverte</strong>Gratuite · Sans engagement</span>
-  <a href="#" onclick="openModal();return false;" class="btn btn-sm">Je réserve</a>
+<!-- =========== NAV =========== -->
+<nav class="nav">
+  <div class="wrap nav-inner">
+    <div class="logo">STRONG<span>STUDIO</span></div>
+    <span class="nav-meta">Bilan offert · Sans engagement</span>
+    <a href="#" onclick="openModal();return false;" class="btn btn-ghost">→ Je réserve</a>
+  </div>
+</nav>
+
+<!-- =========== HERO FULL-SCREEN BG =========== -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="wrap">
+    <div class="hero-content">
+      <div class="hero-eyebrow-badge">
+        <span>StrongStudio Kourou · Coach diplômé 15 ans</span>
+      </div>
+
+      <h1>Retrouvez votre <span class="underline"><em>énergie</em></span>, perdez du poids et bougez sans douleur.</h1>
+
+      <p class="hero-subtitle">Coaching privé + méthode structurée pour installer les habitudes qui durent. <strong>Pour celles et ceux qui ont déjà essayé</strong> — et qui veulent que cette fois, ça tienne.</p>
+
+      <div class="hero-scarcity">4 bilans disponibles par semaine</div>
+
+      <div class="hero-cta-block">
+        <a href="#" onclick="openModal();return false;" class="btn btn-gold btn-lg">→ Réserver mon bilan offert</a>
+        <span class="hero-cta-note">Sans engagement · Bilan complet 60 min · Réponse sous 24h</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Trust bar -->
+<div class="trust-bar">
+  <div class="wrap trust-bar-inner">
+    <span class="trust-item"><strong>Vraiment gratuit</strong></span>
+    <span class="trust-item"><strong>Débutant bienvenu</strong></span>
+    <span class="trust-item"><strong>Douleur ou blessure ? On adapte</strong></span>
+    <span class="trust-item">BPJEPS · StrongFirst Elite</span>
+    <span class="trust-item">Des dizaines de transformations documentées</span>
+  </div>
 </div>
 
-<!-- HERO -->
-<section class="hero">
-  <div class="hg1"></div><div class="hg2"></div><div class="hstripe"></div>
-  <div class="himg"><img src="https://da32ev14kd4yl.cloudfront.net/versioned/martini-pierre-antoine/videos/_PRO1846-Modifier.jpg" alt=""/></div>
-  <div class="container">
-    <div class="eyebrow"><div class="edot"></div>StrongStudio Kourou · Coach diplômé 15 ans</div>
-    <h1>Retrouvez de l'<em>énergie</em>,<br>perdez du poids &amp; bougez sans douleur.</h1>
-    <div class="hrule"></div>
-    <p class="hsub">Accompagnement sur mesure avec le <strong>Parcours Fondations 12 modules</strong> — bilan complet et plan d'action personnalisé, adapté à votre vie réelle à Kourou.</p>
-    <div class="urg"><div class="udot"></div>4 séances découverte disponibles par semaine</div>
-    <div class="bwrap">
-      <a href="#" onclick="openModal();return false;" class="btn">→ Réserver ma séance découverte gratuite</a>
-      <span class="btn-note">Sans engagement · Gratuit</span>
+<!-- =========== GIFTS =========== -->
+<section class="gifts">
+  <div class="wrap">
+    <div class="section-header">
+      <span class="eyebrow">🎁 Offert avec votre bilan</span>
+      <h2>3 ressources pour commencer avant même votre première séance</h2>
     </div>
-    <div class="obj-row">
-      <div class="obj-pill"><span style="color:#56CF8A;font-weight:700">✓</span> Vraiment gratuit</div>
-      <div class="obj-pill"><span style="color:#56CF8A;font-weight:700">✓</span> Débutant bienvenu</div>
-      <div class="obj-pill"><span style="color:#56CF8A;font-weight:700">✓</span> Douleur ou blessure ? On adapte</div>
+
+    <div class="gifts-grid">
+      <div class="gift-card">
+        <h3>Bilan personnalisé · 60 min</h3>
+        <p>Analyse posturale, composition corporelle, habitudes de vie et plan d'action personnalisé. Réalisé par un coach BPJEPS + StrongFirst Elite.</p>
+        <div class="gift-value">Valeur marché : 90 €</div>
+      </div>
+      <div class="gift-card">
+        <h3>Guide Débuter l'Entraînement</h3>
+        <p>Recomposition corporelle, mouvements polyarticulaires, surcharge progressive. 2 séances complètes prêtes à l'emploi, adaptées aux débutants et à la Guyane.</p>
+        <div class="gift-value">Valeur : 47 €</div>
+      </div>
+      <div class="gift-card">
+        <h3>Parcours Fondations · 3 modules</h3>
+        <p>Sommeil, Nutrition, Stress — les fondations biologiques qui déterminent 80% de vos résultats. PDF + synthèse pratique.</p>
+        <div class="gift-value">Valeur : 97 €</div>
+      </div>
     </div>
-    <div class="gift-b">
-      <div class="gift-ico">🎁</div>
-      <div>
-        <div class="glabel">Offert avec votre séance découverte</div>
-        <div class="gtitle">Guide Débuter + Parcours Fondations — 3 premiers modules</div>
-        <div class="gitems">
-          <span class="gpill gpill-g">Guide Débuter l'entraînement</span>
-          <span class="gpill">M01 · Sommeil</span><span class="gpill">M02 · Nutrition</span><span class="gpill">M03 · Stress</span>
+
+    <div class="gifts-total">
+      <span class="amount">234 €</span>
+      <span class="label">Valeur totale · Offerts intégralement avec votre bilan</span>
+    </div>
+  </div>
+</section>
+
+<!-- =========== HUMAN BREAK =========== -->
+<div class="human-break">
+  <img src="_PRO1614-Modifier.jpg" alt="Cliente StrongStudio souriante après séance">
+  <div class="human-break-overlay"></div>
+  <div class="human-break-caption">
+    <p>Parce que l'énergie revient bien avant que le corps ne change.</p>
+  </div>
+</div>
+
+<!-- =========== PROBLEM =========== -->
+<section>
+  <div class="wrap">
+    <div class="section-header">
+      <span class="eyebrow">Notre accompagnement</span>
+      <h2>Vous vous reconnaissez dans l'une de ces situations ?</h2>
+    </div>
+
+    <div class="problem-grid">
+      <div class="problem-card">
+        <span class="problem-num">01</span>
+        <h3>Reprendre une activité physique en sécurité</h3>
+        <p>Dès le premier bilan : un programme adapté à votre niveau réel, pas à un niveau imaginaire.</p>
+      </div>
+      <div class="problem-card">
+        <span class="problem-num">02</span>
+        <h3>Perdre du poids durablement</h3>
+        <p>Sans régime extrême ni privation. Résultats clients : −5 à −10 kg sur 3 à 4 mois, avec une alimentation normale.</p>
+      </div>
+      <div class="problem-card">
+        <span class="problem-num">03</span>
+        <h3>Retrouver une posture solide</h3>
+        <p>Soulager les douleurs de dos, d'épaules, de nuque. Amélioration ressentie dès les 3 premières semaines.</p>
+      </div>
+      <div class="problem-card">
+        <span class="problem-num">04</span>
+        <h3>Soulager le stress du quotidien</h3>
+        <p>Sommeil, énergie, humeur — ces trois-là changent avant même que le corps se transforme.</p>
+      </div>
+      <div class="problem-card">
+        <span class="problem-num">05</span>
+        <h3>Réapprendre le plaisir de bouger</h3>
+        <p>Dans un cadre calme, privé, 100% dédié à votre progression. Pas de compétition, pas de comparaison.</p>
+      </div>
+      <div class="problem-card">
+        <span class="problem-num">06</span>
+        <h3>Renforcer la confiance en soi</h3>
+        <p>Le corps et la tête avancent ensemble, jamais l'un sans l'autre.</p>
+      </div>
+    </div>
+
+    <div class="problem-img">
+      <img src="_PRO1646-Modifier.jpg" alt="Entraînement kettlebell au StrongStudio Kourou">
+    </div>
+
+    <p class="problem-quote">Vous n'avez pas besoin d'être en forme pour commencer.<span>Vous avez juste besoin de vouloir aller mieux.</span></p>
+  </div>
+</section>
+
+<!-- =========== STORY =========== -->
+<section style="background:var(--bg-alt);border-top:1px solid var(--border);border-bottom:1px solid var(--border)">
+  <div class="wrap">
+    <div class="section-header">
+      <span class="eyebrow">L'histoire vraie derrière la méthode</span>
+      <h2>Pourquoi je comprends ce que vous traversez</h2>
+    </div>
+
+    <div class="timeline">
+      <div class="timeline-item">
+        <span class="timeline-year">2020–2021</span>
+        <h3>Le COVID</h3>
+        <p>Fermeture forcée de ma première activité de coaching en Guyane en juin 2021 suite aux restrictions sanitaires. Début d'une longue traversée du désert — 4 années de travail effacées.</p>
+      </div>
+      <div class="timeline-item">
+        <span class="timeline-year">2022</span>
+        <h3>Les doutes</h3>
+        <p>Dix-huit mois à perdre mes repères, ma santé, et peu à peu la rigueur qui m'avait construit. J'ai pris du poids, <strong>perdu confiance</strong>, et je voyais mon corps et mon mental se détériorer.</p>
+      </div>
+      <div class="timeline-item">
+        <span class="timeline-year">2023</span>
+        <h3>Le deuil</h3>
+        <p>Mon père est parti après une longue maladie. Nous vivions ensemble depuis plus de trois ans. Ce moment a <strong>tout bouleversé</strong>. J'ai décidé de repartir à zéro.</p>
+      </div>
+      <div class="timeline-item">
+        <span class="timeline-year">2024</span>
+        <h3>La chute — puis le retour</h3>
+        <p>La veille de mon anniversaire : cambriolage, voiture volée. Plus d'argent, des dettes, 15 kilos en trop. Rien n'a été facile. Mais <strong>à force d'agir, un pas après l'autre</strong>, j'ai tenu.</p>
+      </div>
+      <div class="timeline-item">
+        <span class="timeline-year">2025</span>
+        <h3>La méthode</h3>
+        <p>J'ai réappris à me discipliner, à reprendre soin de ma santé, à redevenir cohérent. Pas de miracle. Pas de raccourci. <strong>Des efforts constants, réguliers, mesurables.</strong></p>
+      </div>
+    </div>
+
+    <div class="story-closing">
+      Si vous êtes en train de lire ça parce que vous avez déjà essayé et que rien n'a tenu : je sais ce que c'est. C'est exactement pour ça que j'ai construit cette méthode. Pas pour les champions — pour les gens comme vous et moi, qui doivent se relever et qui veulent que cette fois soit la bonne.
+    </div>
+
+    <div class="story-transform">
+      <img src="https://da32ev14kd4yl.cloudfront.net/versioned/martini-pierre-antoine/videos/avant%20apres%202025.jpg" alt="Pierre-Antoine Martini, avant et après 2023-2025">
+      <p class="story-transform-caption"><strong>2023 → 2025</strong>Le même homme. Des choix différents. Reconstruire son corps après tout perdre — c'est possible, et ça commence par une seule décision.</p>
+    </div>
+
+    <div class="coach-card">
+      <img class="coach-img" src="https://da32ev14kd4yl.cloudfront.net/versioned/martini-pierre-antoine/videos/_PRO1986-Modifier.jpg" alt="Pierre-Antoine Martini">
+      <div class="coach-info">
+        <h3>Pierre-Antoine Martini</h3>
+        <p class="coach-title">Fondateur de StrongStudio Kourou</p>
+        <ul class="coach-certs">
+          <li>BPJEPS</li>
+          <li>StrongFirst Instructeur Elite</li>
+          <li>Beast Tamer</li>
+          <li>15 ans d'expérience</li>
+        </ul>
+        <p class="coach-quote">"Notre mission : vous aider à redevenir fort, physiquement et mentalement, avec des actions simples, cohérentes et durables."</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =========== TESTIMONIALS =========== -->
+<section>
+  <div class="wrap">
+    <div class="section-header">
+      <span class="eyebrow">Preuves sociales</span>
+      <h2>Ce que disent nos clients</h2>
+      <p class="intro">Des transformations réelles, obtenues grâce à des actions simples, constantes, adaptées à chaque personne.</p>
+    </div>
+
+    <div class="testim-banner">
+      <strong>Résultats moyens constatés :</strong> −5 à −10 kg · Douleurs réduites · Énergie retrouvée · Sommeil amélioré
+    </div>
+
+    <div class="testim-grid">
+      <div class="testim-card">
+        <div class="testim-header">
+          <div class="testim-avatar">R</div>
+          <div><div class="testim-name">Rose</div><div class="testim-meta">30 ans · Assistante Radiologie</div></div>
         </div>
-        <div class="gval">Valeur 47 € — <strong>Offert gratuitement</strong> avec votre séance découverte</div>
+        <p class="testim-quote">"Une des premières phrases que tu m'as dites c'est 'si je te demande de gravir une montagne pour venir t'entraîner tu le feras pas'. Pour moi maintenant chaque effort compte… même les petits. Je tiens à te remercier pour le temps que tu as pris à corriger les mouvements et à me pousser au-delà de ce que je pensais pouvoir faire. Toute ma base de training avec les KB c'est à toi que je la dois."</p>
+        <div class="testim-result">✓ Base kettlebell construite de zéro · Progression régulière et durable</div>
       </div>
-    </div>
-  </div>
-</section>
 
-<hr class="d"/>
-
-<!-- À QUI -->
-<section class="section">
-  <div class="container">
-    <div class="sl sl-g">Notre accompagnement</div>
-    <div class="fondations-mention">
-      <div class="fondations-mention-icon">🏗️</div>
-      <div>
-        <div class="fondations-mention-label">Parcours Fondations StrongStudio — 12 modules</div>
-        <div class="fondations-mention-text">Chaque client qui nous rejoint accède au <strong>Parcours Fondations</strong> — 12 modules scientifiquement structurés couvrant le sommeil, la nutrition, la gestion du stress, la mobilité, l'entraînement et bien plus. C'est le socle de tous les résultats obtenus chez StrongStudio.</div>
-      </div>
-    </div>
-    <h2 style="font-size:clamp(2rem,5vw,3rem);margin-bottom:26px">Vous vous reconnaissez<br>dans l'une de ces situations ?</h2>
-    <div class="tlist">
-      <div class="titem"><div class="tarrow">➡</div><div><div class="tmain">Reprendre une <strong>activité physique</strong> en toute sécurité, sans risque de blessure</div><div class="tres">Dès la 1ère séance : programme adapté à votre niveau réel</div></div></div>
-      <div class="titem"><div class="tarrow">➡</div><div><div class="tmain"><strong>Perdre du poids</strong> durablement, sans régime extrême ni privation</div><div class="tres">Résultats clients : −5 à −10 kg sur 3 à 4 mois, alimentation normale</div></div></div>
-      <div class="titem"><div class="tarrow">➡</div><div><div class="tmain">Retrouver une <strong>posture solide</strong> et soulager les <strong>douleurs</strong> de dos, d'épaules ou de nuque</div><div class="tres">Amélioration ressentie dès les 3 premières semaines</div></div></div>
-      <div class="titem"><div class="tarrow">➡</div><div><div class="tmain">Soulager le <strong>stress du quotidien</strong> et retrouver la clarté mentale</div><div class="tres">Sommeil, énergie, humeur — changent avant même que le corps se transforme</div></div></div>
-      <div class="titem"><div class="tarrow">➡</div><div><div class="tmain">Réapprendre le <strong>plaisir de bouger</strong> dans un cadre calme et privé</div><div class="tres">100 % dédié à votre progression — pas de compétition, pas de comparaison</div></div></div>
-      <div class="titem"><div class="tarrow">➡</div><div><div class="tmain">Renforcer la <strong>confiance en soi</strong> physiquement et mentalement</div><div class="tres">Le corps et la tête avancent ensemble — jamais l'un sans l'autre</div></div></div>
-    </div>
-    <div style="margin:24px 0;border-radius:12px;overflow:hidden">
-      <img src="image00030.jpeg" alt="Coaching kettlebell StrongStudio" style="width:100%;display:block;max-height:380px;object-fit:cover;object-position:center 30%;border-radius:12px"/>
-    </div>
-    <p style="font-size:1.05rem;color:var(--white);font-weight:600">Vous n'avez pas besoin d'être en forme pour commencer.<br><span style="color:var(--muted);font-weight:400;font-size:.95rem">Vous avez juste besoin de vouloir aller mieux.</span></p>
-  </div>
-</section>
-
-<hr class="d"/>
-
-<!-- HISTOIRE -->
-<section class="section s-alt">
-  <div class="container">
-    <div class="sl sl-g">L'histoire vraie derrière la méthode</div>
-    <h2 style="font-size:clamp(1.9rem,4.5vw,2.8rem);margin-bottom:28px">Pourquoi je comprends<br>ce que vous traversez</h2>
-    <div class="swrap">
-      <div class="sitem"><div class="sdot">2020</div><div class="syear">2020 — 2021</div><div class="stitle">Le COVID — 4 ans de travail anéantis</div><div class="stxt">La fermeture de ma première activité de coaching en Guyane en juin 2021, suite aux restrictions COVID-19, a marqué le début d'une longue traversée du désert.</div></div>
-      <div class="sitem"><div class="sdot">2022</div><div class="syear">2022</div><div class="stitle">Les doutes</div><div class="stxt">Dix-huit mois à perdre mes repères, ma santé, et peu à peu la rigueur qui m'avait construit. J'ai pris du poids, <strong>perdu confiance</strong>, et je voyais mon corps et mon mental se détériorer.</div></div>
-      <div class="sitem"><div class="sdot">2023</div><div class="syear">2023</div><div class="stitle">Le deuil</div><div class="stxt">Mon père est parti après une longue maladie. Ce moment a <strong>tout bouleversé.</strong> J'ai décidé de repartir à zéro.</div></div>
-      <div class="sitem"><div class="sdot">2024</div><div class="syear">2024</div><div class="stitle">La chute — puis le retour</div><div class="stxt">La veille de mon anniversaire, cambriolage, voiture volée. Plus d'argent, des dettes, 15 kilos en plus. Mais <strong>à force d'agir, un pas après l'autre</strong>, j'ai tenu.</div></div>
-      <div class="sitem"><div class="sdot">2025</div><div class="syear">2025</div><div class="stitle">La méthode</div><div class="stxt">J'ai réappris à me discipliner, à reprendre soin de ma santé. Pas de miracle. Pas de raccourci. <strong>Des efforts constants, réguliers et mesurables.</strong></div></div>
-    </div>
-    <div class="sconc">Si vous traversez une période où vous sentez qu'il faut <strong>rebâtir</strong>, je peux vous aider à poser les mêmes <strong>fondations</strong>. C'est un <strong>retour au réel : corps, santé, clarté.</strong></div>
-    <div style="margin-top:24px;max-width:460px">
-      <img src="https://da32ev14kd4yl.cloudfront.net/versioned/martini-pierre-antoine/videos/avant apres 2025.jpg" alt="Avant Après 2023-2025" style="width:100%;display:block;object-fit:contain;background:#050d18;border-radius:12px 12px 0 0"/>
-      <div style="background:rgba(232,197,71,0.07);border:1px solid rgba(232,197,71,0.18);border-top:none;border-radius:0 0 12px 12px;padding:12px 18px;text-align:center">
-        <div style="font-family:'Bebas Neue','Impact',sans-serif;font-size:1.3rem;color:var(--gold);margin-bottom:4px">2023 → 2025</div>
-        <div style="font-size:13px;color:#8aa8be;line-height:1.5">Le même homme. Des choix différents. Reconstruire son corps après tout perdre — c'est possible.</div>
-      </div>
-    </div>
-    <!-- 2 photos seulement sous l'histoire -->
-    <div class="g2" style="margin-top:20px">
-      <img class="gi" style="height:210px" src="https://da32ev14kd4yl.cloudfront.net/versioned/martini-pierre-antoine/videos/_PRO1986-Modifier.jpg" alt="Pierre-Antoine Martini"/>
-      <img class="gi" style="height:210px" src="https://da32ev14kd4yl.cloudfront.net/versioned/martini-pierre-antoine/videos/_PRO1711-Modifier.jpg" alt="Coaching StrongStudio"/>
-    </div>
-    <div class="ccard">
-      <div class="cav"><img src="https://da32ev14kd4yl.cloudfront.net/versioned/martini-pierre-antoine/videos/_PRO1986-Modifier.jpg" alt="Pierre-Antoine"/></div>
-      <div>
-        <div class="cname">Pierre-Antoine Martini</div>
-        <div class="crole">Fondateur de StrongStudio Kourou</div>
-        <div class="ccreds"><span class="ccred">BPJEPS</span><span class="ccred">StrongFirst Instructeur Elite</span><span class="ccred">Beast Tamer</span><span class="ccred">15 ans d'expérience</span></div>
-        <div style="margin:10px 0">
-          <img src="MAR0016.jpg" alt="Certificat StrongFirst Elite" style="width:100%;max-width:200px;border-radius:8px;display:block;border:1px solid rgba(255,255,255,0.1)"/>
+      <div class="testim-card">
+        <div class="testim-header">
+          <div class="testim-avatar">F</div>
+          <div><div class="testim-name">Fatia</div><div class="testim-meta">24 ans · Préparatrice en Pharmacie</div></div>
         </div>
-        <div class="cquote">"Notre mission : vous aider à redevenir fort, physiquement et mentalement, avec des actions simples, cohérentes et durables."</div>
+        <p class="testim-quote">"3 mois intensifs de coaching privé et adapté… ça m'a énormément aidée, et pas que physiquement. J'ai −9 kg actuellement mais réaliser en 4 mois que je peux vraiment le faire m'a permis de me recentrer, sortir de ma zone de confort, être plus confiante. StrongFirst c'est se remettre en bonne santé physique et mentale."</p>
+        <div class="testim-result">✓ −9 kg en 4 mois · Confiance retrouvée · Santé physique ET mentale</div>
       </div>
-    </div>
-  </div>
-</section>
 
-<hr class="d"/>
-
-<!-- TÉMOIGNAGES -->
-<section class="section">
-  <div class="container">
-    <div class="sl sl-t">Preuves sociales</div>
-    <h2 style="font-size:clamp(1.9rem,4.5vw,2.8rem);margin-bottom:8px">Ce que disent nos clients</h2>
-    <p class="mb24">Des transformations réelles, obtenues grâce à des actions simples, constantes, adaptées à chaque personne.</p>
-    <div class="rnote"><strong>Résultats moyens constatés</strong> : −5 à −10 kg · Douleurs réduites · Énergie retrouvée · Sommeil amélioré</div>
-    <div style="border-radius:12px;overflow:hidden;margin-bottom:18px">
-      <img src="555725458_3726347887666531_2407005641873497305_n.jpg" alt="Transformations clientes StrongStudio" style="width:100%;display:block;border-radius:12px 12px 0 0"/>
-      <div style="background:rgba(78,205,196,0.06);border:1px solid rgba(78,205,196,0.15);border-top:none;border-radius:0 0 10px 10px;padding:8px 16px;text-align:center;font-size:12px;color:#7a94a8">Transformations réelles de clientes StrongStudio · @strongstudio_kourou</div>
-    </div>
-    <div class="vwrap vp"><video controls preload="metadata"><source src="https://da32ev14kd4yl.cloudfront.net/versioned/martini-pierre-antoine/videos/copy_D0F106B5-26F3-4E43-B224-632C438ACDF2.mp4" type="video/mp4"/></video></div>
-    <div class="vwrap vp"><video controls preload="metadata"><source src="https://da32ev14kd4yl.cloudfront.net/versioned/martini-pierre-antoine/videos/InShot_20260205_142215405.mp4" type="video/mp4"/></video></div>
-    <div class="testi">
-      <div class="testi-h"><div class="tini">R</div><div><div class="tname">Rose</div><div class="trole">30 ans · Assistante Radiologie</div></div></div>
-      <div class="ttxt">"Une des premières phrases que tu m'as dite c'est 'si je te demande de gravir une montagne pour venir t'entraîner tu le feras pas'. Pour moi maintenant chaque effort compte… même les petits. Toute ma base de training avec les KB c'est à toi que je la dois. Je recommande vraiment aux personnes qui ont du mal à se lancer de te contacter afin d'être accompagné comme il se doit."</div>
-      <div class="tres2">✓ Base kettlebell construite de zéro · Progression régulière et durable</div>
-    </div>
-    <div class="testi">
-      <div class="testi-h"><div class="tini">F</div><div><div class="tname">Fatia</div><div class="trole">24 ans · Préparatrice en Pharmacie</div></div></div>
-      <div class="ttxt">"3 mois intensifs de coaching privé et adapté… ça m'a énormément aidée, et pas que physiquement. J'ai −9 kg actuellement mais réaliser en 4 mois que je peux vraiment le faire m'a permis de me recentrer, sortir de ma zone de confort, être plus confiante. Strong first c'est se remettre en bonne santé physique et mentale."</div>
-      <div class="tres2">✓ −9 kg en 4 mois · Confiance retrouvée · Santé physique ET mentale</div>
-    </div>
-    <div class="testi">
-      <div class="testi-h"><div class="tini">L</div><div><div class="tname">Laurent</div><div class="trole">55 ans · Pharmacien</div></div></div>
-      <div class="ttxt">"Quand j'ai commencé avec Pierre, le but était d'apprendre à faire des exercices à domicile pour avoir une régularité. Au bout de 2 ans j'avais un acquis dans la régularité. Je viens de faire 33 km de randonnée à Saül en 2 jours. Je souffre beaucoup moins qu'il y a 10 ans, quand je faisais 10 kg de plus et que j'étais sédentaire."</div>
-      <div class="tres2">✓ 33 km de randonnée à Saül · −10 kg · Pratique autonome 2 ans après</div>
-    </div>
-    <div class="testi">
-      <div class="testi-h"><div class="tini" style="background:rgba(167,139,250,0.12);color:#A78BFA">L</div><div><div class="tname">Lu-Anna</div><div class="trole">50 ans · Responsable logistique CNES</div></div></div>
-      <div class="ttxt">"Concernant mon retour franchement il est positif, j'ai eu des résultats au bout de quelques mois et concernant le changement physique c'était vraiment visible pour ma part. Faire du sport régulièrement surtout les jours où je venais le matin m'a reboosté pour la journée, j'ai une hygiène de vie plus stable et moins dangereuse pour ma santé physique et après ça m'a permis d'avoir une activité à faire ou je pouvais me donner à fond."</div>
-      <div class="tres2" style="color:#A78BFA">✓ Changement physique visible · Énergie retrouvée · Hygiène de vie transformée</div>
-    </div>
-    <p style="margin-top:28px;margin-bottom:12px;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--muted)">Transformations clients</p>
-    <div class="g2">
-      <img class="gi" style="height:260px" src="https://da32ev14kd4yl.cloudfront.net/versioned/martini-pierre-antoine/images/InShot_20251205_193520043(1).jpg" alt="Transformation"/>
-      <img class="gi" style="height:260px" src="https://da32ev14kd4yl.cloudfront.net/versioned/martini-pierre-antoine/images/InShot_20251204_170949258.jpg" alt="4 mois évolution"/>
-    </div>
-    <div class="afeel">
-      <div class="afeel-t">Une fois que vous avez commencé...</div>
-      <div class="afl">Vous vous réveillez avec plus d'énergie — avant même que le corps change visuellement</div>
-      <div class="afl">Vous arrêtez de vous dire "je m'y remets lundi"</div>
-      <div class="afl">Vous sentez votre corps répondre enfin à vos efforts</div>
-      <div class="afl">Vous n'avez plus peur de décrocher — parce que la structure tient</div>
-    </div>
-    <div class="bwrap" style="justify-content:center">
-      <a href="#" onclick="openModal();return false;" class="btn">→ Réserver ma séance découverte gratuite</a>
-    </div>
-  </div>
-</section>
-
-<hr class="d"/>
-
-<!-- MÉTHODE -->
-<section class="section s-alt">
-  <div class="container">
-    <div class="sl sl-g">Notre méthode</div>
-    <h2 style="font-size:clamp(1.9rem,4.5vw,2.8rem);margin-bottom:8px">Un accompagnement sur mesure<br>en 4 étapes</h2>
-    <p class="mb24">Basé sur le <strong>Parcours Fondations 12 modules</strong> — un système complet qui s'adapte à votre corps, votre vie et votre emploi du temps réel à Kourou.</p>
-    <div class="pstep"><div class="pnum">1</div><div><div class="ptitle">🩺 Le bilan personnalisé complet</div><div class="pdesc">On fait le point sur votre corps, votre énergie, vos habitudes. Vous comprenez enfin pourquoi vous êtes fatigué, pourquoi vous avez mal, et ce qui bloque vos résultats.</div></div></div>
-    <div class="pstep"><div class="pnum">2</div><div><div class="ptitle">📋 Le plan d'action Fondations</div><div class="pdesc">Vous repartez avec une stratégie claire basée sur les 12 modules Fondations : quoi faire, à quelle fréquence, et comment l'intégrer dans votre vie réelle.</div></div></div>
-    <div class="pstep"><div class="pnum">3</div><div><div class="ptitle">💪 L'action en séance</div><div class="pdesc">Séances privées ou en petit groupe, dans un cadre calme, avec corrections techniques et suivi des données.</div></div></div>
-    <div class="pstep"><div class="pnum">4</div><div><div class="ptitle">📊 Les résultats mesurables</div><div class="pdesc">Posture, énergie, sommeil, poids, douleur. On suit vos progrès au lieu de deviner. Chaque chiffre a un sens.</div></div></div>
-    <div class="bgrid">
-      <div class="bi"><div class="biico">😴</div><div class="bilbl">Habitudes de vie</div><div class="bidsc">Sommeil, nutrition, stress, rythme quotidien</div></div>
-      <div class="bi"><div class="biico">🏃</div><div class="bilbl">Condition physique</div><div class="bidsc">Posture, mobilité, force, endurance</div></div>
-      <div class="bi"><div class="biico">📐</div><div class="bilbl">Mesures objectives</div><div class="bidsc">Composition corporelle, poids, masse musculaire</div></div>
-      <div class="bi"><div class="biico">🧬</div><div class="bilbl">Bilan biologique</div><div class="bidsc">Si nécessaire, avec professionnel partenaire</div></div>
-    </div>
-    <div class="vwrap vl" style="margin-top:22px">
-      <video controls preload="metadata" poster="https://da32ev14kd4yl.cloudfront.net/versioned/martini-pierre-antoine/videos/_PRO1686-Modifier.jpg">
-        <source src="https://da32ev14kd4yl.cloudfront.net/versioned/martini-pierre-antoine/videos/InShot_20251028_150800897.mp4" type="video/mp4"/>
-      </video>
-    </div>
-    <!-- 4 photos seulement (1 2 4 5) — pas de trous sur mobile -->
-    <div class="g2" style="margin-top:14px">
-      <img class="gi" style="height:220px;object-fit:cover;object-position:center" src="image00086.jpeg" alt="Squat StrongStudio"/>
-      <img class="gi" style="height:220px;object-fit:cover;object-position:center" src="image00008.jpeg" alt="Gainage fitness ball"/>
-    </div>
-    <div class="g2" style="margin-top:10px">
-      <img class="gi" style="height:220px;object-fit:cover;object-position:top" src="https://da32ev14kd4yl.cloudfront.net/versioned/martini-pierre-antoine/videos/_PRO1894-Modifier.jpg" alt="Coaching Pierre-Antoine"/>
-      <img class="gi" style="height:220px;object-fit:cover;object-position:top" src="https://da32ev14kd4yl.cloudfront.net/versioned/martini-pierre-antoine/videos/_PRO1711-Modifier.jpg" alt="Séance StrongStudio"/>
-    </div>
-  </div>
-</section>
-
-<hr class="d"/>
-
-<!-- CADEAUX -->
-<section class="section csect">
-  <div class="container">
-    <div class="sl sl-t tc">Inclus avec votre séance découverte</div>
-    <h2 class="tc" style="font-size:clamp(1.9rem,4.5vw,2.8rem);margin:8px 0 8px">Avant même votre première séance,<br>vous accédez à la méthode complète</h2>
-    <p class="tc mb24" style="max-width:520px;margin-left:auto;margin-right:auto">Le Guide Débuter + les 3 premiers modules Fondations — pour comprendre votre corps avant de commencer.</p>
-    <!-- COVER CADEAU -->
-    <div class="cover-cadeau">
-      <img src="cover-cadeau.jpg" alt="Votre guide offert — StrongStudio Kourou"/>
-    </div>
-    <div class="cwrap">
-      <div class="chdr"><div class="chdr-ico">📘</div><div><div class="chdr-lbl">Cadeau 1</div><div class="chdr-ttl">Guide Débuter l'Entraînement Musculaire</div></div><div class="chdr-val">Valeur 19 €</div></div>
-      <div class="cbody"><div class="cdesc">Le guide pratique complet pour démarrer sans erreurs. Recomposition corporelle, mouvements polyarticulaires, surcharge progressive et deux séances complètes prêtes à l'emploi.</div><div class="cmods"><span class="cmod">Recomposition corporelle</span><span class="cmod">Mouvements polyarticulaires</span><span class="cmod">Surcharge progressive</span><span class="cmod">2 séances complètes</span></div></div>
-    </div>
-    <div class="cwrap">
-      <div class="chdr"><div class="chdr-ico">🧬</div><div><div class="chdr-lbl">Cadeau 2</div><div class="chdr-ttl">Parcours Fondations — 3 premiers modules</div></div><div class="chdr-val">Valeur 28 €</div></div>
-      <div class="cbody">
-        <div class="cdesc">Les 3 fondations biologiques qui déterminent 80 % de vos résultats — avant même de soulever le premier poids. Références scientifiques vérifiées, adaptées à la Guyane.</div>
-        <div class="fmods">
-          <div class="fm m1"><div class="fmbadge">Module 01 · Sommeil</div><div class="fmtitle">Sommeil &amp; Performance</div><div class="fmtxt">Une semaine à 5-6h suffit à réduire de 55% la graisse perdue, augmenter la faim de 28%. Le sommeil profond est le moment où vos muscles se reconstruisent vraiment.</div><div class="fmkey">→ Coucher fixe 7j/7 · chambre fraîche · écrans off 30 min avant</div></div>
-          <div class="fm m2"><div class="fmbadge">Module 02 · Nutrition</div><div class="fmtitle">Nutrition &amp; Énergie</div><div class="fmtxt">Protéines (1.6-2.2g/kg), glucides (Couac, manioc, plantain), lipides jamais sous 25%. Déficit de −300 à −500 kcal pour perdre la graisse sans perdre le muscle.</div><div class="fmkey">→ Assiette protéines + légumes + glucides de qualité à chaque repas</div></div>
-          <div class="fm m3"><div class="fmbadge">Module 03 · Stress</div><div class="fmtitle">Stress &amp; Récupération</div><div class="fmtxt">Le cortisol chronique stocke la graisse viscérale et dégrade le muscle. La récupération active accélère la réparation musculaire de 30-40% versus l'immobilité.</div><div class="fmkey">→ 10 min de décompression active/jour · marche soir 18h-19h30</div></div>
+      <div class="testim-card">
+        <div class="testim-header">
+          <div class="testim-avatar">L</div>
+          <div><div class="testim-name">Laurent</div><div class="testim-meta">55 ans · Pharmacien</div></div>
         </div>
-        <div style="background:rgba(78,205,196,0.06);border:1px solid rgba(78,205,196,0.15);border-radius:8px;padding:12px 16px;margin-top:14px;font-size:13px;color:#8aa8be"><strong style="color:var(--teal)">Le parcours complet (12 modules)</strong> est offert après votre séance découverte — pour continuer sur des bases solides.</div>
+        <p class="testim-quote">"Quand j'ai commencé avec Pierre, le but était d'apprendre à faire des exercices à domicile pour avoir une régularité. Au bout de 2 ans j'avais un acquis dans la régularité. Je viens de faire 33 km de randonnée à Saül en 2 jours. Je souffre beaucoup moins qu'il y a 10 ans, quand je faisais 10 kg de plus et que j'étais sédentaire."</p>
+        <div class="testim-result">✓ 33 km de randonnée à Saül · −10 kg · Pratique autonome 2 ans après</div>
       </div>
     </div>
-    <div class="total-box">
-      <div style="font-size:11px;font-weight:700;letter-spacing:2px;color:var(--muted);text-transform:uppercase;margin-bottom:6px">Valeur totale des cadeaux</div>
-      <div class="total-num">47 €</div>
-      <div style="font-size:14px;color:var(--white);margin-top:5px">Offerts gratuitement avec votre séance découverte</div>
+
+    <div class="testim-gallery">
+      <img src="555725458_3726347887666531_2407005641873497305_n.jpg" alt="Transformations clientes StrongStudio">
+      <img src="https://da32ev14kd4yl.cloudfront.net/versioned/martini-pierre-antoine/images/InShot_20251205_193520043(1).jpg" alt="Transformation client">
+      <img src="https://da32ev14kd4yl.cloudfront.net/versioned/martini-pierre-antoine/images/InShot_20251204_170949258.jpg" alt="4 mois d'évolution">
     </div>
-    <div class="bwrap mt24" style="justify-content:center">
-      <a href="#" onclick="openModal();return false;" class="btn">→ Réserver et recevoir mes cadeaux</a>
-    </div>
-  </div>
-</section>
 
-<hr class="d"/>
-
-<!-- FAQ -->
-<section class="section s-alt">
-  <div class="container">
-    <div class="sl sl-g">Questions fréquentes</div>
-    <h2 style="font-size:clamp(1.9rem,4.5vw,2.8rem);margin-bottom:22px">Tout ce que vous voulez<br>savoir avant de venir</h2>
-    <div class="fi open"><div class="fq">La séance découverte est-elle vraiment gratuite ?</div><div class="fa">Oui, sans engagement et sans frais cachés. C'est un premier rendez-vous pour faire le point ensemble — diagnostic, plan d'action, recommandations. Vous repartez avec des actions concrètes quelle que soit votre décision ensuite.</div></div>
-    <div class="fi"><div class="fq">Combien de temps dure la séance découverte ?</div><div class="fa">Entre 45 minutes et 1 heure. Bilan complet, plan personnalisé, et vous repartez avec des actions à mettre en place dès la semaine suivante.</div></div>
-    <div class="fi"><div class="fq">Je n'ai pas fait de sport depuis longtemps — c'est pour moi ?</div><div class="fa">C'est exactement pour ça que la séance découverte existe. La majorité de nos clients n'avaient pas pratiqué depuis plusieurs années. On part de votre niveau réel, pas d'un niveau imaginaire.</div></div>
-    <div class="fi"><div class="fq">J'ai une douleur au dos ou une blessure ancienne — puis-je venir ?</div><div class="fa">Oui. Le bilan initial inclut une évaluation posturale et fonctionnelle. Tout est adapté à votre situation réelle. En cas de pathologie médicale, on travaille en coordination avec votre médecin.</div></div>
-    <div class="fi"><div class="fq">Les séances sont-elles individuelles ou en groupe ?</div><div class="fa">Les deux sont possibles. Séances privées ou en petit groupe dans un cadre calme, 100 % dédié à votre progression. Aucune grande salle, aucun anonymat.</div></div>
-    <div class="fi"><div class="fq">Où se trouve le studio ?</div><div class="fa">Place de l'Horloge, Quartier Berlioz, à côté du vétérinaire et en face d'Actalis — 97310 Kourou. Parking disponible.</div></div>
-    <div class="fi"><div class="fq">Combien coûtent les séances après la découverte ?</div><div class="fa">Les tarifs sont présentés lors de la séance découverte, adaptés à votre programme et à la fréquence recommandée. Pas de forfait générique — un plan construit pour vous.</div></div>
-  </div>
-</section>
-
-<hr class="d"/>
-
-<!-- LOCALISATION -->
-<section class="section">
-  <div class="container">
-    <div class="sl sl-m" style="margin-bottom:14px">Nous trouver</div>
-    <div class="lbox">
-      <div style="font-size:30px">📍</div>
-      <div>
-        <div class="lname">StrongStudio Kourou</div>
-        <div class="laddr">Place de l'Horloge, Quartier Berlioz · À côté du vétérinaire · En face d'Actalis<br>97310 Kourou, Guyane</div>
-        <div class="lct">📞 <a href="tel:0694221799">0694 22 17 99</a> &nbsp;·&nbsp; ✉️ <a href="mailto:strongstudio-kourou@outlook.fr">strongstudio-kourou@outlook.fr</a></div>
+    <div class="testim-once-wrap">
+      <img class="testim-once-img" src="_PRO1657-Modifier.jpg" alt="Cliente StrongStudio à la barre de traction">
+      <div class="testim-once">
+        <h3>Une fois que vous avez commencé…</h3>
+        <ul>
+          <li>Vous vous réveillez avec plus d'énergie — avant même que le corps change visuellement.</li>
+          <li>Vous arrêtez de vous dire "je m'y remets lundi".</li>
+          <li>Vous sentez votre corps répondre enfin à vos efforts.</li>
+          <li>Vous n'avez plus peur de décrocher — parce que la structure tient.</li>
+        </ul>
       </div>
     </div>
-    <img class="gi" style="margin-top:14px;height:250px;object-fit:cover" src="image00009.jpeg" alt="StrongStudio Kourou"/>
-  </div>
-</section>
 
-<!-- FINAL CTA -->
-<section class="fcta">
-  <div class="container" style="position:relative;z-index:1">
-    <h2>Votre première séance<br>est <em>gratuite</em> et sans engagement.</h2>
-    <p style="color:var(--muted);max-width:460px;margin:14px auto 28px">Seulement 4 séances découverte disponibles par semaine.<br>Ne remettez pas à lundi ce que vous pouvez décider aujourd'hui.</p>
-    <a href="#" onclick="openModal();return false;" class="btn" style="font-size:17px;padding:18px 44px">→ Réserver ma séance découverte gratuite</a>
-    <p style="font-size:12px;color:var(--muted);margin-top:14px">Sans engagement · Bilan complet · Fondations 12 modules + Guide offerts (valeur 47 €)</p>
-    <div class="urg" style="justify-content:center;display:inline-flex;margin-top:20px">
-      <div class="udot"></div>4 places / semaine · 0694 22 17 99 · @strongstudio_kourou
+    <div class="cta-mid">
+      <a href="#" onclick="openModal();return false;" class="btn btn-gold btn-lg">→ Réserver mon bilan offert</a>
+      <p>Bilan 60 min · Guide + 3 modules Fondations offerts · Valeur 234 €</p>
     </div>
   </div>
 </section>
 
-<!-- MODAL -->
-<div class="mo" id="reservModal">
-  <div class="mb">
-    <button class="mc" onclick="closeModal()">✕</button>
-    <div class="mtitle">Réservez votre séance</div>
-    <div class="msub">Gratuite · Sans engagement · Réponse sous 24h</div>
-    <div class="mconf" id="mconf">
-      <div style="font-size:44px;margin-bottom:14px">✅</div>
-      <div style="font-family:'Bebas Neue','Impact',sans-serif;font-size:1.7rem;color:var(--white);margin-bottom:8px">Demande envoyée !</div>
-      <div style="font-size:14px;color:#8aa8be;line-height:1.65;margin-bottom:16px">Pierre-Antoine vous recontacte sous 24h.<br><strong style="color:var(--teal)">Vérifiez vos spams.</strong></div>
-      <div style="background:rgba(232,197,71,0.07);border:1px solid rgba(232,197,71,0.18);border-radius:10px;padding:12px 16px;font-size:13px;color:#b8ccd8;margin-bottom:16px">🎁 Votre Guide Débuter + 3 modules Fondations (valeur 47 €) vous sera envoyé par email dans les prochaines minutes.</div>
-      <button onclick="closeModal()" class="btn" style="width:100%;justify-content:center">Fermer</button>
+<!-- =========== METHOD =========== -->
+<section style="background:var(--bg-alt);border-top:1px solid var(--border);border-bottom:1px solid var(--border)">
+  <div class="wrap">
+    <div class="section-header">
+      <span class="eyebrow">Notre méthode</span>
+      <h2>Un accompagnement sur mesure, en 4 étapes</h2>
+      <p class="intro">Pas un programme générique. Un plan construit pour votre corps, votre vie et votre emploi du temps réel.</p>
     </div>
-    <div id="mwrap">
-      <form method="post" action="https://martini-pierre-antoine.learnybox.com/form/68fe551408f04mz2ijkrjtotubb48n5mms/" target="_parent" class="mform" id="reservForm">
-        <input type="text" name="fname" placeholder="Votre prénom" required class="mi"/>
-        <input type="email" name="email" placeholder="Votre adresse email *" required class="mi"/>
-        <input type="text" name="mobile" placeholder="Votre numéro de téléphone" class="mi"/>
-        <div class="mrgpd">
-          <label><input type="checkbox" name="rgpd" value="1" required/><span>En indiquant votre email, vous acceptez d'être recontacté par notre coach pour réserver votre séance bilan privée.</span></label>
-          <input type="hidden" name="rgpd_notice" value="En indiquant votre adresse mail, vous acceptez de recevoir nos offres promotionnelles et d&#39;être recontacté par notre coach pour réserver une séance bilan privée."/>
+
+    <div class="method-steps">
+      <div class="method-step">
+        <span class="step-num">01</span>
+        <h3>Le bilan complet</h3>
+        <p>On fait le point sur votre corps, votre énergie, vos habitudes. Vous comprenez enfin pourquoi vous êtes fatigué, pourquoi vous avez mal, et ce qui bloque vos résultats.</p>
+      </div>
+      <div class="method-step">
+        <span class="step-num">02</span>
+        <h3>Le plan d'action</h3>
+        <p>Vous repartez avec une stratégie claire : quoi faire, à quelle fréquence, et comment l'intégrer dans votre vie réelle à Kourou.</p>
+      </div>
+      <div class="method-step">
+        <span class="step-num">03</span>
+        <h3>L'action en séance</h3>
+        <p>Séances privées ou en petit groupe, dans un cadre calme. Corrections techniques, ajustements en temps réel, suivi des données — pas de distractions.</p>
+      </div>
+      <div class="method-step">
+        <span class="step-num">04</span>
+        <h3>Les résultats mesurables</h3>
+        <p>Posture, énergie, sommeil, poids, douleur. On suit vos progrès au lieu de deviner. Chaque chiffre a un sens.</p>
+      </div>
+    </div>
+
+    <div class="bilan-contents">
+      <h3>Ce que contient le bilan</h3>
+      <div class="bilan-grid">
+        <div class="bilan-item">
+          <span class="num">01</span>
+          <h4>Habitudes de vie</h4>
+          <p>Sommeil, nutrition, stress, rythme quotidien</p>
         </div>
-        <button type="submit" class="msub-btn">→ Je réserve ma séance découverte gratuite</button>
-        <div class="mnote">Sans engagement · Gratuit · Réponse sous 24h</div>
+        <div class="bilan-item">
+          <span class="num">02</span>
+          <h4>Condition physique</h4>
+          <p>Posture, mobilité, force, endurance</p>
+        </div>
+        <div class="bilan-item">
+          <span class="num">03</span>
+          <h4>Mesures objectives</h4>
+          <p>Composition corporelle, poids, masse musculaire</p>
+        </div>
+        <div class="bilan-item">
+          <span class="num">04</span>
+          <h4>Bilan biologique</h4>
+          <p>Si nécessaire, avec professionnel partenaire</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="studio-gallery">
+      <img src="_PRO1686-Modifier.jpg" alt="Coaching mobilité au StrongStudio">
+      <img src="_PRO1584-Modifier.jpg" alt="Séance kettlebell collective">
+      <img src="_PRO1646-Modifier.jpg" alt="Squat goblet avec kettlebell">
+    </div>
+  </div>
+</section>
+
+<!-- =========== FONDATIONS =========== -->
+<section class="fond">
+  <div class="wrap">
+    <div class="section-header">
+      <span class="eyebrow">Parcours Fondations · 3 modules offerts</span>
+      <h2>Avant même votre première séance, vous accédez aux fondations de votre transformation</h2>
+      <p class="intro">Les 3 premiers modules du Parcours Fondations — le système structuré que suivent tous mes clients en coaching. Pour comprendre votre corps, pas seulement suivre des instructions.</p>
+    </div>
+
+    <div class="fond-modules">
+      <div class="fond-mod">
+        <span class="fond-mod-tag">Module 01 · Couche 1</span>
+        <h3>Sommeil & Performance</h3>
+        <p>Une seule semaine à 5-6h de sommeil réduit la graisse perdue de 55% — à régime strictement identique. Comprendre pourquoi, et exactement quoi mettre en place pour récupérer un sommeil qui reconstruit.</p>
+        <p class="outcome">Vous repartez avec une routine sommeil ancrée en 7 jours.</p>
+      </div>
+      <div class="fond-mod">
+        <span class="fond-mod-tag">Module 02 · Couche 1</span>
+        <h3>Nutrition & Énergie</h3>
+        <p>La vraie formule pour calculer vos besoins caloriques (la plupart des applis se trompent de 200 à 400 kcal). Comment composer votre assiette avec les aliments de Guyane — sans régime, sans privation, sans MyFitnessPal.</p>
+        <p class="outcome">Vous repartez avec votre cible calorique personnelle et 3 repas modèles.</p>
+      </div>
+      <div class="fond-mod">
+        <span class="fond-mod-tag">Module 03 · Couche 1</span>
+        <h3>Stress & Récupération</h3>
+        <p>Pourquoi le cortisol chronique stocke la graisse sur le ventre même quand vous mangez "bien" — et le protocole de 10 minutes qui fait basculer votre système nerveux en mode récupération.</p>
+        <p class="outcome">Vous repartez avec votre protocole de décompression quotidien.</p>
+      </div>
+    </div>
+
+    <div class="fond-note">
+      Le parcours complet (12 modules, 3 couches) est réservé aux clients en coaching. Les 3 premiers modules vous sont offerts avec votre bilan — pour que vous puissiez évaluer par vous-même la qualité du travail avant toute décision.
+    </div>
+  </div>
+</section>
+
+<!-- =========== FAQ =========== -->
+<section>
+  <div class="wrap">
+    <div class="section-header">
+      <span class="eyebrow">Questions fréquentes</span>
+      <h2>Tout ce que vous voulez savoir avant de venir</h2>
+    </div>
+
+    <div class="faq">
+      <details class="faq-item" open>
+        <summary>J'ai déjà essayé plein de choses qui n'ont pas tenu. Pourquoi ça marcherait cette fois ?</summary>
+        <div class="faq-answer">
+          <p>Parce que ce qui n'a pas tenu, ce n'était pas vous. C'était le plan.</p>
+          <p>La plupart des programmes donnent des objectifs sans structure, ou une structure qui n'est pas adaptée à votre vie — vos horaires, votre travail, la chaleur, votre famille, votre logistique réelle. Résultat : ça marche 3 semaines puis ça s'effondre.</p>
+          <p>Ici, on fait l'inverse. On part de votre réalité concrète, on construit un plan qui tient dedans, et on veille chaque semaine à ce que vous réalisiez les actions qui produisent le résultat. Le Parcours Fondations vous accompagne jour après jour, et les séances servent à ajuster en fonction de ce qui se passe vraiment dans votre vie.</p>
+          <p>Mes clients les plus fidèles sont ceux qui avaient "tout essayé". C'est précisément pour eux que j'ai construit cette méthode.</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>Le bilan est-il vraiment gratuit ?</summary>
+        <div class="faq-answer">
+          <p>Oui, sans engagement et sans frais cachés. C'est un premier rendez-vous pour faire le point ensemble — diagnostic, plan d'action, recommandations. Vous repartez avec des actions concrètes quelle que soit votre décision ensuite.</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>Combien de temps dure le bilan ?</summary>
+        <div class="faq-answer">
+          <p>Entre 45 minutes et 1 heure. Bilan complet, plan personnalisé, et vous repartez avec des actions à mettre en place dès la semaine suivante.</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>Je n'ai pas fait de sport depuis longtemps — c'est pour moi ?</summary>
+        <div class="faq-answer">
+          <p>C'est exactement pour ça que le bilan existe. La majorité de mes clients n'avaient pas pratiqué depuis plusieurs années. On part de votre niveau réel, pas d'un niveau imaginaire.</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>J'ai une douleur au dos ou une blessure ancienne — puis-je venir ?</summary>
+        <div class="faq-answer">
+          <p>Oui. Le bilan inclut une évaluation posturale et fonctionnelle. Tout est adapté à votre situation réelle. En cas de pathologie médicale, je travaille en coordination avec votre médecin.</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>Les séances sont-elles individuelles ou en groupe ?</summary>
+        <div class="faq-answer">
+          <p>Les deux sont possibles. Séances privées ou en petit groupe dans un cadre calme, 100% dédié à votre progression. Aucune grande salle, aucun anonymat.</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>Combien coûtent les séances après le bilan ?</summary>
+        <div class="faq-answer">
+          <p>Les tarifs sont présentés lors du bilan, adaptés à votre programme et à la fréquence recommandée. Pas de forfait générique — un plan construit pour vous. Le bilan est sans engagement : si vous sentez que ce n'est pas pour vous, aucun souci.</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>Où se trouve le studio ?</summary>
+        <div class="faq-answer">
+          <p>Place de l'Horloge à Kourou, à côté du vétérinaire et en face d'Actalis. 97310 Kourou. Parking disponible.</p>
+        </div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- =========== LOCATION =========== -->
+<section class="location" style="background:var(--bg-alt);border-top:1px solid var(--border);border-bottom:1px solid var(--border)">
+  <div class="wrap">
+    <div class="section-header">
+      <span class="eyebrow">Nous trouver</span>
+      <h2>StrongStudio Kourou</h2>
+    </div>
+
+    <div class="location-card">
+      <p>Place de l'Horloge<br>À côté du vétérinaire · En face d'Actalis<br>97310 Kourou, Guyane</p>
+      <p style="margin-top:1.5rem">
+        <a href="tel:0694221799">0694 22 17 99</a><br>
+        <a href="mailto:strongstudio-kourou@outlook.fr">strongstudio-kourou@outlook.fr</a>
+      </p>
+    </div>
+
+    <img class="location-img" src="image00009.jpeg" alt="StrongStudio Kourou — façade du studio">
+  </div>
+</section>
+
+<!-- =========== FINAL CTA =========== -->
+<section class="final-cta" id="reserver">
+  <div class="final-cta-bg"></div>
+  <div class="final-cta-overlay"></div>
+  <div class="wrap">
+    <div class="section-header" style="margin-bottom:2rem">
+      <span class="eyebrow">Votre décision aujourd'hui</span>
+      <h2>Votre premier bilan est <em>offert</em> et sans engagement</h2>
+      <p class="intro">Seulement 4 bilans disponibles par semaine.<br>Ne remettez pas à lundi ce que vous pouvez décider aujourd'hui.</p>
+    </div>
+
+    <a href="#" onclick="openModal();return false;" class="btn btn-gold btn-lg">→ Réserver mon bilan offert</a>
+
+    <p class="final-micro">
+      <strong>Sans engagement · Bilan complet 60 min · Guide + 3 modules Fondations offerts · Valeur 234 €</strong><br>
+      4 places/semaine · 0694 22 17 99 · @strongstudio_kourou
+    </p>
+  </div>
+</section>
+
+<!-- =========== FOOTER =========== -->
+<footer>
+  <div class="wrap">
+    <p>
+      <a href="https://instagram.com/strongstudio_kourou" target="_blank">@strongstudio_kourou</a>
+      <a href="tel:0694221799">0694 22 17 99</a>
+      <a href="mailto:strongstudio-kourou@outlook.fr">Contact</a>
+    </p>
+    <p>Pierre-Antoine Martini · StrongStudio Kourou · Guyane · 2026</p>
+  </div>
+</footer>
+
+<!-- =========== STICKY MOBILE CTA =========== -->
+<div class="sticky-mobile">
+  <div class="sticky-mobile-text">
+    <strong>Bilan offert · 234 € de cadeaux</strong>
+    Sans engagement · Réponse 24h
+  </div>
+  <a href="#" onclick="openModal();return false;" class="btn btn-gold">→ Je réserve</a>
+</div>
+
+<!-- =========== MODAL (Learnybox form) =========== -->
+<div class="modal" id="reservModal">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal()" aria-label="Fermer">✕</button>
+
+    <!-- Formulaire -->
+    <div id="modalForm">
+      <div class="modal-title">Réservez votre bilan</div>
+      <div class="modal-sub">Gratuit · Sans engagement · Réponse sous 24h</div>
+
+      <form method="post"
+            action="https://martini-pierre-antoine.learnybox.com/form/68fe551408f04mz2ijkrjtotubb48n5mms/"
+            target="_parent"
+            class="modal-form"
+            id="reservForm">
+        <input type="text" name="fname" placeholder="Votre prénom" required class="modal-input">
+        <input type="email" name="email" placeholder="Votre adresse email *" required class="modal-input">
+        <input type="text" name="mobile" placeholder="Votre numéro de téléphone" class="modal-input">
+
+        <div class="modal-rgpd">
+          <input type="checkbox" name="rgpd" value="1" required id="rgpdCheck">
+          <label for="rgpdCheck">En indiquant votre email, vous acceptez d'être recontacté par Pierre-Antoine pour réserver votre bilan privé.</label>
+          <input type="hidden" name="rgpd_notice" value="En indiquant votre adresse mail, vous acceptez de recevoir nos offres promotionnelles et d&#39;être recontacté par notre coach pour réserver une séance bilan privée.">
+        </div>
+
+        <button type="submit" class="modal-submit">→ Je réserve mon bilan offert</button>
+        <div class="modal-note">Sans engagement · Gratuit · Réponse sous 24h</div>
       </form>
+    </div>
+
+    <!-- Confirmation -->
+    <div class="modal-confirm" id="modalConfirm">
+      <div class="icon">✅</div>
+      <h4>Demande envoyée !</h4>
+      <p>Pierre-Antoine vous recontacte sous 24h pour confirmer votre créneau.<br><strong>Pensez à vérifier vos spams.</strong></p>
+      <div class="modal-confirm-gift">
+        🎁 Votre Guide Débuter + 3 modules Fondations (valeur 234 €) vous sera envoyé par email dans les prochaines minutes.
+      </div>
+      <button onclick="closeModal()" class="modal-submit">Fermer</button>
     </div>
   </div>
 </div>
@@ -586,30 +1239,32 @@ body::before{content:'';position:fixed;inset:0;
 function openModal(){
   document.getElementById('reservModal').classList.add('open');
   document.body.style.overflow='hidden';
-  document.getElementById('mwrap').style.display='block';
-  document.getElementById('mconf').style.display='none';
+  document.getElementById('modalForm').style.display='block';
+  document.getElementById('modalConfirm').classList.remove('show');
+  if(typeof fbq!=='undefined') fbq('track','Lead');
 }
 function closeModal(){
   document.getElementById('reservModal').classList.remove('open');
   document.body.style.overflow='';
 }
-document.getElementById('reservModal').addEventListener('click',function(e){if(e.target===this)closeModal();});
-document.addEventListener('keydown',function(e){if(e.key==='Escape')closeModal();});
+document.getElementById('reservModal').addEventListener('click',function(e){
+  if(e.target===this) closeModal();
+});
+document.addEventListener('keydown',function(e){
+  if(e.key==='Escape') closeModal();
+});
 document.getElementById('reservForm').addEventListener('submit',function(e){
   e.preventDefault();
   var form=this;
+  if(typeof fbq!=='undefined') fbq('track','CompleteRegistration');
   fetch(form.action,{method:'POST',body:new FormData(form),mode:'no-cors'})
-    .then(function(){document.getElementById('mwrap').style.display='none';document.getElementById('mconf').style.display='block';})
+    .then(function(){
+      document.getElementById('modalForm').style.display='none';
+      document.getElementById('modalConfirm').classList.add('show');
+    })
     .catch(function(){form.submit();});
 });
-document.querySelectorAll('.fq').forEach(function(q){
-  q.addEventListener('click',function(){
-    var item=this.parentElement;
-    var wasOpen=item.classList.contains('open');
-    document.querySelectorAll('.fi').forEach(function(i){i.classList.remove('open');});
-    if(!wasOpen)item.classList.add('open');
-  });
-});
 </script>
+
 </body>
 </html>
